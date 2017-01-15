@@ -1,3 +1,8 @@
+@import "App.css";
+@import "header.css";
+@import "contents.css";
+@import "footer.css";
+
 body {
   margin: 0;
   padding: 0;
