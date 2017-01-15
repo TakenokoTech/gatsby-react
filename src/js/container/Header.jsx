@@ -6,14 +6,23 @@ import {Button} from "./compornents/index.jsx"
 
 class Header extends Component {
 
+  //==========================================================
+  // LIFECYCLE
+  //==========================================================
   componentDidMount(){
     console.log("componentDidMount");
   }
 
+  //==========================================================
+  // ACTION
+  //==========================================================
   onToggleOverlayClass(){
     console.log("onToggleOverlayClass");
   }
 
+  //==========================================================
+  // RENDER
+  //==========================================================
   render() {
 
     const btnClass = "btn waves-effect waves-light";
@@ -21,7 +30,7 @@ class Header extends Component {
     return (
       <div className="z-depth-4 App-header">
         <div className="header btn-group-justified">
-          <Button className="btn brand"><img src={logo} className="App-logo" alt="logo"/></Button>
+          <Button className="brand"><img src={logo} className="App-logo" alt="logo"/></Button>
         </div>
         <div className="navigation btn-group-justified">
           <Button className={btnClass}>Home</Button>
