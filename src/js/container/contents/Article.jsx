@@ -1,12 +1,33 @@
 import React, { Component } from 'react';
+import * as api from '../../util/api.jsx';
+import {ParseDiv} from '../compornents/index.jsx';
 
 class Article extends Component {
+
+  //==========================================================
+  // CONSTRACTOR
+  //==========================================================
+  constructor(props){
+    super(props);
+
+    //-- article data --//
+    this.state = {
+      title:  "タイトル"
+    };
+  }
 
   //==========================================================
   // LIFECYCLE
   //==========================================================
   componentDidMount(){
     console.log("componentDidMount");
+    api.callApi("article.html").then((res) => {
+      console.log(res.text);
+      this.setState({title: res.text});
+      var parser = new DOMParser();
+      var dom = parser.parseFromString(res, "text/html");
+      var title = dom.getElementById('doc');
+    });
   }
 
   //==========================================================
@@ -50,13 +71,13 @@ class Article extends Component {
   renderArticle() {
     let key = 0, returnDom = [];
     const Contents = [
-      {date: "20XX/01/12 08:00", title: "タイトル", sentence: this.renderSentece()}
+      {date: "20XX/01/12 08:00", title: this.state.title, sentence: this.renderSentece()}
     ];
     for(let content of Contents) {
       returnDom.push(
         <div className="_article col-md-12 z-depth-2" key={key}>
             <div className="_date">{content.date}</div>
-            <div className="_title">{content.title}</div>
+            <ParseDiv className="_title">{content.title}</ParseDiv>
             <div className="_sentence">{content.sentence}</div>
             <hr/>
             {this.renderChips()}
