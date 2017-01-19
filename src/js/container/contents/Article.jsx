@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as api from '../../util/api.jsx';
+import * as parser from '../../util/parser';
 import {ParseDiv} from '../compornents/index.jsx';
 
 class Article extends Component {
@@ -12,7 +12,9 @@ class Article extends Component {
 
     //-- article data --//
     this.state = {
-      title:  "タイトル"
+      date: "20XX/01/12 08:00",
+      title: "タイトル",
+      sentence: "文章"
     };
   }
 
@@ -21,13 +23,8 @@ class Article extends Component {
   //==========================================================
   componentDidMount(){
     console.log("componentDidMount");
-    api.callApi("article.html").then((res) => {
-      console.log(res.text);
-      this.setState({title: res.text});
-      var parser = new DOMParser();
-      var dom = parser.parseFromString(res, "text/html");
-      var title = dom.getElementById('doc');
-    });
+    parser.getArticle("articles/article.xml").then((res) => this.setState(res));
+    
   }
 
   //==========================================================
@@ -54,36 +51,17 @@ class Article extends Component {
     );
   }
 
-  renderSentece() {
-    return [
-      <h2 key={1}>ヘッダー2</h2>,
-      <p key={2}>ぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょう</p>,
-      <p key={3}>ぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょう</p>,
-      <h3 key={4}>ヘッダー3</h3>,
-      <p key={5}>ぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょう</p>,
-      <h4 key={6}>HEADER4</h4>,
-      <p key={7}>ぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょう</p>,
-      <p key={8}>ぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょう</p>,
-      <p key={9}>ぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょうぶんしょう</p>
-    ];
-  }
-
   renderArticle() {
     let key = 0, returnDom = [];
-    const Contents = [
-      {date: "20XX/01/12 08:00", title: this.state.title, sentence: this.renderSentece()}
-    ];
-    for(let content of Contents) {
-      returnDom.push(
-        <div className="_article col-md-12 z-depth-2" key={key}>
-            <div className="_date">{content.date}</div>
-            <ParseDiv className="_title">{content.title}</ParseDiv>
-            <div className="_sentence">{content.sentence}</div>
-            <hr/>
-            {this.renderChips()}
-        </div>
-      );
-    }
+    returnDom.push(
+      <div className="_article col-md-12 z-depth-2" key={key}>
+          <div className="_date">{this.state.date}</div>
+          <ParseDiv className="_title">{this.state.title}</ParseDiv>
+          <ParseDiv className="_sentence">{this.state.sentence}</ParseDiv>
+          <hr/>
+          {this.renderChips()}
+      </div>
+    );
     return returnDom;
   }
 

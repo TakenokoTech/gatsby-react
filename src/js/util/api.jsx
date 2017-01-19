@@ -16,7 +16,7 @@ function apiGet(apiName){
   return new Promise(
     (resolve, reject) => {
       superagent.get(apiName)
-        .set("Accept", "text/html")
+        .set("Accept", "text/xml")
         .end((err, res) => err ? reject(err) : resolve(res));
     }
   );
