@@ -9,6 +9,7 @@
     "marked": "^0.3.6",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-prism": "^4.0.0",
     "superagent": "^3.3.2"
   },
   "scripts": {

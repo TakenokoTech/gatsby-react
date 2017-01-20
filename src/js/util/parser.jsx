@@ -4,28 +4,10 @@ import * as api from './api.jsx';
 
 
 // Synchronous highlighting with highlight.js
-marked.setOptions({
-  highlight: function (code) {
-    return highlight.highlightAuto(code).value;
-  }
-});
+marked.setOptions({highlight: (code) => highlight.highlightAuto(code).value});
 
-//
-function overideMarker() {
-  const renderer = new marked.Renderer();
-  let idx;
-  renderer.heading = (text, level) => {
-    console.log(text);
-    var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
-    return '<h' + level + '><a name="' +escapedText + '" class="anchor" href="#' + escapedText + '"><span class="header-link"></span></a>' + text + '</h' + level + '>';
-  };
-  renderer.html = (html) => {
-    console.log(html);
-    if (html.indexOf("<index>") === -1) return html;
-    idx = marked(html.replace("<index>", "<div class='aaa'>").replace("</index>", "</div>"));
-    return "";
-  };
-  return renderer;
+function parse(sentence) {
+  return sentence.children
 }
 
 /**
@@ -43,7 +25,8 @@ export const getArticle = (fileName) => {
         date:         dom.getElementsByTagName("date")[0].textContent,
         title:        dom.getElementsByTagName("title")[0].textContent,
         description:  dom.getElementsByTagName("description")[0].textContent,
-        sentence:     marked(dom.getElementsByTagName("sentence")[0].textContent, {renderer: overideMarker()})
+        // sentence:     marked(dom.getElementsByTagName("sentence")[0].textContent, {renderer: overideMarker()})
+        sentence:     parse(dom.getElementsByTagName("sentence")[0])
       }
       resolve(resolveRes);
     })

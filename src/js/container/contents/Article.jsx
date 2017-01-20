@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as parser from '../../util/parser';
-import {ParseDiv} from '../compornents/index.jsx';
+import {ParseDiv, Chips} from '../compornents/index.jsx';
+import {PrismCode} from "react-prism";
 
 class Article extends Component {
 
@@ -23,7 +24,7 @@ class Article extends Component {
   //==========================================================
   componentDidMount(){
     console.log("componentDidMount");
-    parser.getArticle("articles/article.xml").then((res) => this.setState(res));
+    parser.getArticle("articles/article.1.xml").then((res) => this.setState(res));
     
   }
 
@@ -51,15 +52,31 @@ class Article extends Component {
     );
   }
 
+  renderSentence() {
+    let returnRender = [];
+    const sentence = this.state.sentence;
+    for(let i in sentence) {
+      if(!sentence.hasOwnProperty(i)) break;
+      switch (sentence[i].nodeName) {
+        case "text": returnRender.push(<ParseDiv key={i} className="_sentence">{sentence[i].innerHTML}</ParseDiv>); break;
+        case "code": returnRender.push(<pre key={i} className="line-numbers"><PrismCode className="language-javascript">{sentence[i].innerHTML}</PrismCode></pre>); break;
+        default: break;
+      }
+    }
+    return returnRender;
+  }
+
   renderArticle() {
     let key = 0, returnDom = [];
     returnDom.push(
       <div className="_article col-md-12 z-depth-2" key={key}>
           <div className="_date">{this.state.date}</div>
           <ParseDiv className="_title">{this.state.title}</ParseDiv>
-          <ParseDiv className="_sentence">{this.state.sentence}</ParseDiv>
+          {this.renderSentence()}
+          <ParseDiv className="_sentence">{}</ParseDiv>
           <hr/>
-          {this.renderChips()}
+          <Chips/>
+          {/*this.renderChips()*/}
       </div>
     );
     return returnDom;
