@@ -2,6 +2,7 @@
 
   h1, h2, h3, h4 {
     margin-top: $p3;
+    margin-bottom: $p1;
   }
 
   h1 {
@@ -46,8 +47,7 @@
     border-left: 8px solid #393939;
   }
   p {
-    margin: 0;
-    margin-bottom: $m1;
+    margin: $m1 0;
     text-indent: $normal;
     font-size: $normal;
     line-height: $p1;

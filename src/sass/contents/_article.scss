@@ -5,6 +5,8 @@
   ._article {
     padding: $p3 $p1;
     margin: $p3 0;
+    color: $article_color;
+    background-color: $article_background;
     ._date {
       padding-left: 5px;
       letter-spacing: 5px;
@@ -21,6 +23,22 @@
     }
     ._sentence {
       margin-bottom: $p3;
+    }
+    ._link {
+      width: 90%;
+      margin: $p1 5%;
+      padding: $m2 0;
+      border-radius: 8px;
+      background-color: #ffffff;
+      border: 1px solid #e6e6e6;
+      div {
+        padding: 0 $m1;
+      }
+      a {
+        padding: 0 $p1;
+        color: #ec026b;
+        &:hover { color: #ee7181; }
+      }
     }
   }
 }
