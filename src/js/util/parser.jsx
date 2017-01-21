@@ -1,10 +1,10 @@
 import marked from 'marked';
-import highlight from "highlight.js";
+// import highlight from "highlight.js";
 import * as api from './api.jsx';
 
 
 // Synchronous highlighting with highlight.js
-marked.setOptions({highlight: (code) => highlight.highlightAuto(code).value});
+// marked.setOptions({highlight: (code) => highlight.highlightAuto(code).value});
 
 function parse(sentence) {
   return sentence.children
