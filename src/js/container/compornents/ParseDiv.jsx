@@ -11,12 +11,14 @@ class ParseDiv extends Component {
   }
 
   render() {
-    return (<div className={this.props.className} dangerouslySetInnerHTML={this.createMarkup()}/>);
+    const Tag = this.props.Tag || "div";
+    return (<Tag className={this.props.className} dangerouslySetInnerHTML={this.createMarkup()}/>);
   }
 }
 
 ParseDiv.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,
+  Tag: PropTypes.string,
 };
 export default ParseDiv;

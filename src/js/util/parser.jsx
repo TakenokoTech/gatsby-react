@@ -1,4 +1,4 @@
-import marked from 'marked';
+// import marked from 'marked';
 // import highlight from "highlight.js";
 import * as api from './api.jsx';
 
@@ -7,7 +7,11 @@ import * as api from './api.jsx';
 // marked.setOptions({highlight: (code) => highlight.highlightAuto(code).value});
 
 function parse(sentence) {
-  return sentence.children
+  const s = sentence;
+  // for(let d of s.getElementsByClassName("link")) {
+  //   console.warn(d);
+  // }
+  return s.children;
 }
 
 /**
