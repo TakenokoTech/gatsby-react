@@ -1,0 +1,79 @@
+@import './article/header.scss';
+
+.App-article {
+  margin-bottom: 0;
+  ._article {
+    padding: $p3 $p1;
+    margin: $p3 0;
+    ._date {
+      padding-left: 5px;
+      letter-spacing: 5px;
+    }
+    ._title {
+      padding-top: $m1;
+      font-size: $p2;
+      font-weight: bold;
+    }
+    ._chips {
+      .chip {color: #ffffff;}
+      ._t {background-color:#00aced;}
+      ._f {background-color:#305097;}
+    }
+    ._sentence {
+      margin-bottom: $p3;
+    }
+  }
+}
+//========================================================
+// スクロールアニメーション
+//========================================================
+.App-article {
+  overflow: hidden;
+  ._article{
+    opacity: 0.0;
+    animation: article_fadeIn 1.0s ease-in-out 0.8s 1 normal;
+    animation-fill-mode: forwards;
+  }
+  &.enter {
+    opacity: 1.0;
+    max-height: 4000px;
+    transition: all 1.0s ease;
+  }
+  &.leave {
+    opacity: 0.0;
+    max-height: 0;
+    transition: all 1.0s ease;
+  }
+}
+
+@keyframes article_fadeIn {
+    0%    {
+      opacity: 0.0;
+      // transform: translate3d( 0, 60px, 0);
+    }
+    100%  {
+      opacity: 1.0;
+      // transform: translate3d( 0, 0, 0);
+    }
+}
+@keyframes article_fadeOut {
+    0%    {
+      opacity: 1.0;
+      // transform: translate3d( 0, 60px, 0);
+    }
+    100%  {
+      opacity: 0.0;
+      // transform: translate3d( 0, 0, 0);
+    }
+}
+
+//========================================================
+// スマホ用
+//========================================================
+@media screen and (max-width: $article_max_width) {
+.App-article {
+  ._article {
+    margin: 0;
+  }
+}
+}

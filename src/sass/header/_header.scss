@@ -1,0 +1,22 @@
+//===============================================
+// STYLE
+//===============================================
+.App-header {
+  background-color: $header_backgound;
+  .header {
+    padding: $p2;
+    text-align: center;
+    img {
+      height: $p2;
+      margin: 0 auto;
+    }
+  }
+  .navigation {
+    background-color: $header_backgound;
+    padding: 1px;
+    .btn {
+      background-color: $header_backgound;
+      color: $header_color;
+    }
+  }
+}

@@ -24,8 +24,7 @@ class Article extends Component {
   //==========================================================
   componentDidMount(){
     console.log("componentDidMount");
-    parser.getArticle("articles/article.1.xml").then((res) => this.setState(res));
-    
+    parser.getArticle("articles/16.01.15/article.1.xml").then((res) => this.setState(res));
   }
 
   //==========================================================
@@ -58,7 +57,7 @@ class Article extends Component {
     for(let i in sentence) {
       if(!sentence.hasOwnProperty(i)) break;
       switch (sentence[i].nodeName) {
-        case "text": returnRender.push(<ParseDiv key={i} className="_sentence">{sentence[i].innerHTML}</ParseDiv>); break;
+        case "text": returnRender.push(<ParseDiv key={i} className="_text">{sentence[i].innerHTML}</ParseDiv>); break;
         case "code": returnRender.push(<pre key={i} className="line-numbers"><PrismCode className="language-javascript">{sentence[i].innerHTML}</PrismCode></pre>); break;
         default: break;
       }
@@ -72,8 +71,7 @@ class Article extends Component {
       <div className="_article col-md-12 z-depth-2" key={key}>
           <div className="_date">{this.state.date}</div>
           <ParseDiv className="_title">{this.state.title}</ParseDiv>
-          {this.renderSentence()}
-          <ParseDiv className="_sentence">{}</ParseDiv>
+          <div className="_sentence">{this.renderSentence()}</div>
           <hr/>
           <Chips/>
           {/*this.renderChips()*/}

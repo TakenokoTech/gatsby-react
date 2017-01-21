@@ -1,5 +1,26 @@
-@import './header.scss';
+// @import "../libs/css/materialize.min.css";
 
-a {
-    width: 100px;
-}
+//BASE SASS (.scss)
+@import "./setting.scss";
+@import "./zIndex.scss";
+
+// HEADER
+@import "./header/header.scss";
+@import "./header/carousel.scss";
+
+// FOOTER
+@import "./footer/footer.scss";
+
+// OVERLAY
+@import "./overlay/overlay.scss";
+
+// CONTENTS
+@import "./contents/content.scss";
+@import "./contents/sideber.scss";
+@import "./contents/article_list.scss";
+@import "./contents/article.scss";
+@import "./contents/imagepop.scss";
+
+// COMPONETS
+@import "./components/_diviver_button.scss";
+@import "./components/_loader.scss";

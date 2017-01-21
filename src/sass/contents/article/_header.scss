@@ -1,0 +1,60 @@
+.App-article ._article ._sentence {
+
+  h1, h2, h3, h4 {
+    margin-top: $p3;
+  }
+
+  h1 {
+    font-size: $p1;
+  }
+  h2 {
+    position: relative;
+    font-size: $p1;
+    text-indent: $normal;
+    background: #f9f9f9;
+    padding: 8px;
+    margin-left: 8px;
+    border-bottom: 2px solid #cacaca;
+    &:before, &:after{
+      position: absolute;
+      content: "";
+      background-color: #a0a0a0;
+    }
+    &:before{
+      height: 12px;
+      width: 12px;
+      top: -6px;
+      left: -6px;
+    }
+    &:after{
+      height: 8px;
+      width: 8px;
+      top: 6px;
+      left: 6px;
+    }
+  }
+  h3 {
+    font-size: $p1;
+    background: #393939;
+    color: #fff;
+    padding: 16px;
+  }
+  h4 {
+    font-size: $p1;
+    background: #f9f9f9;
+    padding: 12px;
+    border-left: 8px solid #393939;
+  }
+  p {
+    margin: 0;
+    margin-bottom: $m1;
+    text-indent: $normal;
+    font-size: $normal;
+    line-height: $p1;
+    //letter-spacing: .065em;
+  }
+  .codepen {
+    width: 100%;
+    padding: $normal 0;
+  }
+}
