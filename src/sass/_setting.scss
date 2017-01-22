@@ -7,7 +7,7 @@ $header_color: #EEE;
 $footer_backgound: #444;
 $footer_color: #ccc;
 
-$article_background: #f0f0f0;
+$article_background: #fAfAfA;
 $article_color: #333;
 
 //===============================================
@@ -28,6 +28,7 @@ $gold:    1.61;
 $normal:  1.0rem;
 $m1: $normal / $gold;
 $m2: $m1 / $gold;
+$m3: $m2 / $gold;
 $p1: $normal * $gold;
 $p2: $p1 * $gold;
 $p3: $p2 * $gold;

@@ -4,17 +4,36 @@
   margin-bottom: 0;
   ._article {
     padding: $p3 $p1;
-    margin: $p3 0;
+    margin: $p2 0;
     color: $article_color;
     background-color: $article_background;
-    ._date {
-      padding-left: 5px;
-      letter-spacing: 5px;
+    letter-spacing: .065em;
+    ._entry {
+      background-color: #fAfAfA;
+      padding: $m2 0;
+      margin-top: $p1;
+      font-size: $normal / 1.2;
+      ._date {
+        margin-right: $m1;
+        padding: $m2 $normal;
+        color: #FFF;
+        background-color: #565656;
+        border-radius: $m2;
+      }
+      ._category {
+        padding: $m2 $normal;
+        color: #FFF;
+        background-color: #039be5;
+        border-radius: $normal;
+      }
     }
     ._title {
       padding-top: $m1;
       font-size: $p2;
       font-weight: bold;
+    }
+    ._description {
+      margin: $p3 0;
     }
     ._chips {
       .chip {color: #ffffff;}
@@ -23,22 +42,6 @@
     }
     ._sentence {
       margin-bottom: $p3;
-    }
-    ._link {
-      width: 90%;
-      margin: $p1 5%;
-      padding: $m2 0;
-      border-radius: 8px;
-      background-color: #ffffff;
-      border: 1px solid #e6e6e6;
-      div {
-        padding: 0 $m1;
-      }
-      a {
-        padding: 0 $p1;
-        color: #ec026b;
-        &:hover { color: #ee7181; }
-      }
     }
   }
 }

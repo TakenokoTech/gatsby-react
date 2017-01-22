@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {GaAds} from '../compornents/index.jsx';
 
-class Sideber extends Component {
+class Advertise extends Component {
 
   //==========================================================
   // LIFECYCLE
@@ -13,22 +13,11 @@ class Sideber extends Component {
   //==========================================================
   // RENDER
   //==========================================================
-
-  renderProfile() {
-    return (
-      <div className="_profile">
-        <div>プロフィール</div>
-        <img src=""/><div>たけのこ</div>
-      </div>
-    );
-  }
-
   render() {
-    const className = this.props.className + " App-sideber";
+    const className = this.props.className + " App-advertise";
 
     return (
       <div className={className}>
-        <div className="col-md-12 z-depth-2">{this.renderProfile()}</div>
         <div className="col-md-12"><GaAds/></div>
       </div>
     );
@@ -36,4 +25,4 @@ class Sideber extends Component {
 
 }
 
-export default Sideber;
+export default Advertise;

@@ -18,7 +18,7 @@ class Link extends Component {
 
     return (
       <div className='_link'>
-        <div>☆link</div>
+        {this.props.description ? <span>{this.props.description}</span> : null}
         <a {...props}>{this.props.children}</a>
       </div>
     );
@@ -29,5 +29,6 @@ Link.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,
   attr: PropTypes.object,
+  description: PropTypes.string
 };
 export default Link;

@@ -51,7 +51,27 @@
     text-indent: $normal;
     font-size: $normal;
     line-height: $p1;
-    //letter-spacing: .065em;
+  }
+  ._link {
+    margin: $p1;
+    span {
+      display: inline-block;
+      // padding: $m2 $m1;
+      padding: 1px $p2;
+      color: #fff;
+      background-color: #AAA;
+      border-radius: 4px 4px 0px 0px;
+    }
+    a {
+      display: block;
+      padding: $normal;
+      color: #1464b3;
+      text-decoration: underline;
+      border: solid 1px #AAA;
+      border-radius: 0px 4px 0px 4px;
+      &:hover { color: #ee7181; }
+      &:before { content: "＞ "; }
+    }
   }
   .codepen {
     width: 100%;

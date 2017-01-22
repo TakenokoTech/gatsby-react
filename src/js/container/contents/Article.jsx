@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as parser from '../../util/parser';
-import {Button, ParseDiv, Chips, Link} from '../compornents/index.jsx';
+import {Button, ParseDiv, Chips, Link, GaAds} from '../compornents/index.jsx';
 import {PrismCode} from "react-prism";
 import _ from 'lodash';
 
@@ -52,6 +52,22 @@ class Article extends Component {
     );
   }
 
+  renderDescription() {
+    let key = 1;
+    let returnRender = [];
+    returnRender.push(<h1 key={key++}/>);
+    returnRender.push(<ParseDiv key={key++} Tag="div" className="_desc">{this.state.description}</ParseDiv>);
+    return returnRender;
+  }
+
+  renderEntry(){
+    let key = 1;
+    let returnRender = [];
+    returnRender.push(<ParseDiv key={key++} Tag="span" className="_date">{"更新日:" + this.state.date}</ParseDiv>);
+    returnRender.push(<ParseDiv key={key++} Tag="a" className="_category">{this.state.category}</ParseDiv>);
+    return returnRender;
+  }
+
   renderSentence(dom) {
     let returnRender = [];
     const sentence = dom;
@@ -78,12 +94,12 @@ class Article extends Component {
     let key = 0, returnDom = [];
     returnDom.push(
       <div className="_article col-md-12 z-depth-2" key={key}>
-          <div className="_date">{this.state.date}</div>
           <ParseDiv className="_title">{this.state.title}</ParseDiv>
+          <div className="_entry">{this.renderEntry()}</div>
+          <div className="_sentence _description">{this.renderSentence(this.state.description)}</div>
+          <GaAds/>
           <div className="_sentence">{this.renderSentence(this.state.sentence)}</div>
-          <hr/>
           <Chips/>
-          {/*this.renderChips()*/}
       </div>
     );
     return returnDom;

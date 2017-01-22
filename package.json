@@ -16,6 +16,7 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "marked": "^0.3.6",
+    "moment": "^2.17.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-prism": "^4.0.0",
