@@ -23,6 +23,30 @@ class Sideber extends Component {
     );
   }
 
+  renderCategory() {
+    return(
+      <div>
+        <div>カテゴリ</div>
+      </div>
+    );
+  }
+
+  renderFavor() {
+    return(
+      <div>
+        <div>人気</div>
+      </div>
+    );
+  }
+
+  renderRecent() {
+    return(
+      <div>
+        <div>最近</div>
+      </div>
+    );
+  }
+
   render() {
     const className = this.props.className + " App-sideber";
 
@@ -30,6 +54,9 @@ class Sideber extends Component {
       <div className={className}>
         <div className=""><GaAds/></div>
         <div className="">{this.renderProfile()}</div>
+        <div className="">{this.renderCategory()}</div>
+        <div className="">{this.renderFavor()}</div>
+        <div className="">{this.renderRecent()}</div>
       </div>
     );
   }
