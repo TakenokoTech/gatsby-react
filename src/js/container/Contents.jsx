@@ -20,9 +20,9 @@ class Contents extends Component {
   render() {
     return (
       <div className="row App-contents">
-          <Advertise className="col-sm-12"/>
           <Article className="col-sm-9"/>
           <Sideber className="col-sm-3"/>
+          <Advertise className="col-sm-12"/>
       </div>
     );
   }

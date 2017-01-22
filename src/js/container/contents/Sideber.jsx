@@ -18,7 +18,7 @@ class Sideber extends Component {
     return (
       <div className="_profile">
         <div>プロフィール</div>
-        <img src=""/><div>たけのこ</div>
+        <img alt="" src=""/><div>たけのこ</div>
       </div>
     );
   }
@@ -28,8 +28,8 @@ class Sideber extends Component {
 
     return (
       <div className={className}>
-        <div className="col-md-12 z-depth-2">{this.renderProfile()}</div>
-        <div className="col-md-12"><GaAds/></div>
+        <div className=""><GaAds/></div>
+        <div className="">{this.renderProfile()}</div>
       </div>
     );
   }

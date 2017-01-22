@@ -3,13 +3,13 @@
 .App-article {
   margin-bottom: 0;
   ._article {
-    padding: $p3 $p1;
+    padding: $p1;
     margin: $p2 0;
     color: $article_color;
     background-color: $article_background;
     letter-spacing: .065em;
     ._entry {
-      background-color: #fAfAfA;
+      background-color: $article_background;
       padding: $m2 0;
       margin-top: $p1;
       font-size: $normal / 1.2;
@@ -21,6 +21,7 @@
         border-radius: $m2;
       }
       ._category {
+        position: relative;
         padding: $m2 $normal;
         color: #FFF;
         background-color: #039be5;
@@ -28,7 +29,7 @@
       }
     }
     ._title {
-      padding-top: $m1;
+      padding-top: $p2;
       font-size: $p2;
       font-weight: bold;
     }

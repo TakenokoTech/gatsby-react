@@ -1,0 +1,12 @@
+.App-breadcrumb {
+    width: 100%;
+    border: 1px solid #e8e8e8;
+    border-width: 1px 0;
+    padding: $m1;
+    margin-bottom: $p2;
+    div {
+      max-width: $article_max_width * 4 / 3;
+      margin: 0 auto;
+      padding: 10px 0;
+    }
+}

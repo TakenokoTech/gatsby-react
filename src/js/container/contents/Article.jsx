@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as parser from '../../util/parser';
-import {Button, ParseDiv, Chips, Link, GaAds} from '../compornents/index.jsx';
+import {Breadcrumb, Button, ParseDiv, Chips, Link, GaAds} from '../compornents/index.jsx';
 import {PrismCode} from "react-prism";
 import _ from 'lodash';
 
@@ -40,15 +40,6 @@ class Article extends Component {
       >
         See the Pen <a href='http://codepen.io/TakenokoPro/pen/pRjExv/'>pRjExv</a> by Takenoko (<a href='http://codepen.io/TakenokoPro'>@TakenokoPro</a>) on <a href='http://codepen.io'>CodePen</a>.
       </iFrame>
-    );
-  }
-
-  renderChips() {
-    return (
-      <div className="_chips">
-        <div className="chip _t">Twitter</div>
-        <div className="chip _f">FaceBook</div>
-      </div>
     );
   }
 
@@ -93,7 +84,8 @@ class Article extends Component {
   renderArticle() {
     let key = 0, returnDom = [];
     returnDom.push(
-      <div className="_article col-md-12 z-depth-2" key={key}>
+      <div className="_article col-md-12" key={key}>
+          <Breadcrumb className=""/>
           <ParseDiv className="_title">{this.state.title}</ParseDiv>
           <div className="_entry">{this.renderEntry()}</div>
           <div className="_sentence _description">{this.renderSentence(this.state.description)}</div>

@@ -20,7 +20,12 @@
 @import "./contents/article_list.scss";
 @import "./contents/article.scss";
 @import "./contents/imagepop.scss";
+@import "./contents/breadcrumb.scss";
 
 // COMPONETS
 @import "./components/_diviver_button.scss";
 @import "./components/_loader.scss";
+
+body {
+  background-color: $base_background;
+}

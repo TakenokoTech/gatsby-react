@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Button} from './compornents/index.jsx';
 
 class Header extends Component {
 
@@ -19,7 +20,7 @@ class Header extends Component {
     let children = (contents) => {
       let key = 0, returnDom = [];
       for(let content of contents) {
-        returnDom.push(<li key={key++}><a>{content}</a></li>);
+        returnDom.push(<li key={key++}><Button className="waves-effect">{content}</Button></li>);
       }
       return returnDom;
     };
