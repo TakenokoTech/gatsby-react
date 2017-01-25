@@ -5,6 +5,7 @@
   "devDependencies": {
     "autoprefixer": "^6.6.1",
     "css-loader": "^0.26.1",
+    "mysql": "^2.12.0",
     "node-sass": "^4.3.0",
     "postcss-loader": "^1.2.2",
     "precss": "^1.4.0",
@@ -26,6 +27,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "php -S localhost:8000 -t ./server"
   }
 }

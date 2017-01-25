@@ -16,3 +16,6 @@ npm-debug.log.*
 
 # public
 public/css
+
+# server
+server/data.db
