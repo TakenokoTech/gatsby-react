@@ -11,7 +11,6 @@ class FILE {
       if( filetype( $path = $dir . "/". $file ) == "dir" ) {
         $this->searchFile($path);
       } else {
-        echo($path . "<br/>");
         array_push($this->filePath, $path);
       }
     }
