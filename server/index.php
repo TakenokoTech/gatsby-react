@@ -22,5 +22,5 @@ if (file_exists('./models/'.$call.'.php')) {
 //===============================================================
 // INCLUDE CONTROLLER
 //===============================================================
-file_exists('./controllers/'.$call.'.php') 
-  ? include('./controllers/'.$call.'.php') : include('./controllers/error.php');
+// file_exists('./controllers/'.$call.'.php') 
+  // ? include('./controllers/'.$call.'.php') : include('./controllers/error.php');
