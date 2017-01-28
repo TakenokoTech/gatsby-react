@@ -9,6 +9,9 @@ class SQL extends SQLite3 {
 
   function __construct() {
     $this->open('./data.db');
+  }
+
+  function migration() {
     foreach ($this->table as &$q) @$this->exec($q);
   }
 

@@ -1,4 +1,6 @@
+<link href="./style.css" rel="stylesheet" type="text/css">
 <?php
+
 //
 if (empty($_SERVER['PATH_INFO'])) {
   include('./controllers/index.php');

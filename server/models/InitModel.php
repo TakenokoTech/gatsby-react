@@ -14,6 +14,8 @@ class InitModel extends BaseModel{
     $this->INI = parse_ini_file("./server.ini");
     $this->DB = new SQL();
     $this->FILE = new FILE();
+    // Rebuild
+    $this->DB->migration();
   }
 
   public function index() {

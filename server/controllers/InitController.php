@@ -22,12 +22,10 @@ class InitController extends BaseController {
         // =======================================================
 
         $json = array();
+        $key = ["date", "title", "category", "description"];
         foreach ($this->model->index() as $row) {
             $arr = array();
-            array_push($arr, $row["date"]);
-            array_push($arr, $row["title"]);
-            array_push($arr, $row["category"]);
-            array_push($arr, $row["description"]);
+            foreach ($key as $k) $arr[$k] = $row[$k];
             array_push($json, $arr);
         }
         print_r( json_encode($json, JSON_PRETTY_PRINT) );
