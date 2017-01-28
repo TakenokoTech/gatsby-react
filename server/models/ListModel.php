@@ -16,10 +16,7 @@ class ListModel extends BaseModel{
   }
 
   public function index() {
-    //==================================================================
-    // CHECK RESULT
     $result = $this->DB->query("SELECT * FROM blog");
-
     $arr = array();
     while ($row = $result->fetchArray()) array_push($arr, $row);
     $this->DB->close();
