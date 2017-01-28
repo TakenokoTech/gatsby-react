@@ -10,17 +10,16 @@ $analysis = explode('/', $_SERVER['PATH_INFO']);
 foreach ($analysis as $value) if ( ($call = $value) !== "") break;
 
 //===============================================================
-// INCLUDE MODEL
-//===============================================================
-if (file_exists('./models/'.$call.'.php')) {
-  include('./models/'.$call.'.php');
-  $class = new $call();
-  $ret = $class->index($analysis);
-  if (!is_null($ret) && is_array($ret)) extract($ret);
-}
+// CREATE NAME
+$className = ucfirst ($call);
+$controllerName = ucfirst ($className) . "Controller";
+$modelName = ucfirst ($className) . "Model";
 
 //===============================================================
-// INCLUDE CONTROLLER
-//===============================================================
-// file_exists('./controllers/'.$call.'.php') 
-  // ? include('./controllers/'.$call.'.php') : include('./controllers/error.php');
+// INCLUDE MODEL & CONTROLLER
+file_exists('./models/'.$modelName.'.php') ? include('./models/'.$modelName.'.php') : require_once('./error.php');
+file_exists('./controllers/'.$controllerName.'.php') ? include('./controllers/'.$controllerName.'.php') : require_once('./error.php');
+
+$class = new $controllerName();
+$ret = $class->index($analysis);
+if (!is_null($ret) && is_array($ret)) extract($ret);

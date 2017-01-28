@@ -1,14 +1,14 @@
 <?php
 
 // IMPORT BASE
-require("ModelComponent.php");
+require_once("BaseModel.php");
 
 /*
  * 初期化処理
  */
-class init extends ModelComponent{
+class InitModel extends BaseModel{
 
-  private $INI, $DB, $FILE;
+  public $INI, $DB, $FILE;
 
   function __construct() {
     $this->INI = parse_ini_file("./server.ini");
@@ -16,7 +16,7 @@ class init extends ModelComponent{
     $this->FILE = new FILE();
   }
 
-  function index() {
+  public function index() {
     //==================================================================
     // IMPORT PATH
     $dir = $this->INI["ARTICLES_URL"];
@@ -35,7 +35,7 @@ class init extends ModelComponent{
         $sentence    = @$xmlData->sentence->asXML();
 
         $INSERT = "INSERT INTO blog (date, title, category, description, sentence)";
-        $VALUES = "VALUES ('$date', '$title', '$category', '$description', '$sentence')";
+        $VALUES = "VALUES ('$date', '$title', '$category', '$description', '')";
 
         $sql = $INSERT . " " . $VALUES . ";";
         $result_flag = $this->DB->query($sql);
@@ -43,18 +43,10 @@ class init extends ModelComponent{
     //==================================================================
     // CHECK RESULT
     $result = $this->DB->query("SELECT * FROM blog");
-    echo('<table>');
-    while ($row = $result->fetchArray()){
-        echo("<tr>");
-            echo("<td>".$row["date"]."</td>");
-            echo("<td>".$row["title"]."</td>");
-            echo("<td>".$row["category"]."</td>");
-            echo("<td>".$row["description"]."</td>");
-        echo("</tr>");
-    }
-    echo('</table>');
-    $this->DB->close();
 
-    echo renderXML();
+    $arr = array();
+    while ($row = $result->fetchArray()) array_push($arr, $row);
+    $this->DB->close();
+    return $arr;
   }
 }

@@ -8,7 +8,7 @@ class SQL extends SQLite3 {
   ];
 
   function __construct() {
-    $this->open('../data.db');
+    $this->open('./data.db');
     foreach ($this->table as &$q) @$this->exec($q);
   }
 
