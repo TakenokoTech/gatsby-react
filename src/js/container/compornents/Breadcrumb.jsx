@@ -9,10 +9,6 @@ class Breadcrumb extends Component {
     };
   }
 
-  componentDidMount(){
-
-  }
-
   renderChild(){
     let key = 0;
     let links = [];

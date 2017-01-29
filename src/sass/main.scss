@@ -30,3 +30,9 @@
 body {
   background-color: $base_background;
 }
+.none-pointer-event {
+  pointer-events: none;
+}
+a {
+  cursor: pointer;
+}

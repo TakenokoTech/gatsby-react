@@ -1,13 +1,15 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
+import BaseComponent from "./BaseComponent.jsx";
 
-class Button extends Component {
+class Button extends BaseComponent {
 
   componentDidMount(){
     console.log("componentDidMount");
   }
 
   render() {
-    const className = this.props.className || (this.props.noRipple ? "btn" : "btn waves-effect");
+    let className = this.props.className || (this.props.noRipple ? "btn" : "btn waves-effect");
+    className = this.addClass(className, {shadow: 1});
     const Tab = this.props.Tag || "a";
 
     return (

@@ -54,8 +54,8 @@ class Article extends Component {
   renderEntry(){
     let key = 1;
     let returnRender = [];
-    returnRender.push(<ParseDiv key={key++} Tag="span" className="_date">{"更新日:" + this.state.date}</ParseDiv>);
-    returnRender.push(<ParseDiv key={key++} Tag="a" className="_category">{this.state.category}</ParseDiv>);
+    returnRender.push(<Button key={key++} Tag="span" addRipple={true} className="_date">{"更新日:" + this.state.date}</Button>);
+    returnRender.push(<Button key={key++} Tag="div" addRipple={true} className="_category">{this.state.category}</Button>);
     return returnRender;
   }
 

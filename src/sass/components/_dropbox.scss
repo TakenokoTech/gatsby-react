@@ -1,3 +1,7 @@
+.dropmenu-group {
+  margin-top: $p1;
+}
+
 .dropmenu{
   padding: 0;
 
@@ -17,19 +21,21 @@
       display: block;
       margin: 0;
       padding: 15px 0 11px;
-      color: #FFF;
-      background-color: #039be5;
+      color:#666;
+      background-color: #F6F6F6;
       font-size: 14px;
       line-height: 1;
       text-decoration: none;
+      border: 1px solid #CCC;
     }
     ul{
       li{
         width: 100%;
         a{
           padding: 13px 15px;
-          border-top: 1px solid #7c8c0e;
-          background: #6e7c0c;
+          // border-top: 1px solid #7c8c0e;
+          color:#888;
+          background: #FFF;
           text-align: left;
         }
       }

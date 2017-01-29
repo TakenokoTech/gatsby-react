@@ -1,6 +1,7 @@
-import React, {Component, PropTypes} from "react";
+import React, {PropTypes} from "react";
+import BaseComponent from "./BaseComponent.jsx";
 
-class ParseDiv extends Component {
+class ParseDiv extends BaseComponent {
 
   componentDidMount(){
 
@@ -12,7 +13,9 @@ class ParseDiv extends Component {
 
   render() {
     const Tag = this.props.Tag || "div";
-    return (<Tag className={this.props.className} dangerouslySetInnerHTML={this.createMarkup()}/>);
+    let className = this.props.className || "";
+    className = this.addClass(className);
+    return (<Tag className={className} dangerouslySetInnerHTML={this.createMarkup()}/>);
   }
 }
 

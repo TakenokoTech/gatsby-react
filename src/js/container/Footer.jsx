@@ -20,7 +20,7 @@ class Header extends Component {
     let children = (contents) => {
       let key = 0, returnDom = [];
       for(let content of contents) {
-        returnDom.push(<li key={key++}><Button className="waves-effect">{content}</Button></li>);
+        returnDom.push(<li key={key++}><Button className="_" notShadow={true}>{content}</Button></li>);
       }
       return returnDom;
     };
