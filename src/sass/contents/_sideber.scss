@@ -10,7 +10,12 @@
     ._title {
       font-size: $p1;
       text-align: center;
-      margin: $m1 0;
+      margin: $p1 0;
+      span {
+        padding: 4px 16px;
+        font-weight: bold;
+        // border-bottom: solid 1px #DDD;
+      }
     }
     ._profile {
       img {
@@ -29,7 +34,7 @@
       }
       ._link {
         width: 100%;
-        margin-top: $p1;
+        margin-top: $p2;
         ._social {
           width: 31%;
           margin: 1%;
@@ -48,6 +53,25 @@
         }
         &:after {
           clear: both;
+        }
+      }
+    }
+    ._favor {
+      ._article {
+        position: relative;
+        width: 100%;
+        border-bottom: solid 1px #e8e8e8;
+        img {
+          width: 84px;
+          height: 84px;
+        }
+        ._article_title {
+          position: absolute;
+          height: 48px;
+          padding: 4px;
+        }
+        .__state {
+          position: absolute;
         }
       }
     }

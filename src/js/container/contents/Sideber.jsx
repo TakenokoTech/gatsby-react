@@ -36,7 +36,7 @@ class Sideber extends Component {
   renderProfile() {
     return (
       <div className="_profile">
-        <div className="_title">Profile</div>
+        <div className="_title"><span>Profile</span></div>
         <img alt="" src={panda}/><div className="_name">たけのこ</div>
         <div className="_clear" />
         <div className="_link">
@@ -62,12 +62,11 @@ class Sideber extends Component {
     };
     return(
       <div>
-        <div className="_title">Category</div>
+        <div className="_title"><span>Category</span></div>
         <div className="dropmenu-group">
           <ul className="dropmenu">
-            <li><Button className="_parent" addRipple={true} notShadow={true} onClick={() => this.onClickParent(0)}>親カテゴリ</Button>
-              {this.state.openParent === 0 ? renderChildren(0) : null}
-            </li>
+            <li><Button className="_parent" addRipple={true} notShadow={true} onClick={() => this.onClickParent(0)}>親カテゴリ</Button>{this.state.openParent === 0 ? renderChildren(0) : null}</li>
+            <li><Button className="_parent" addRipple={true} notShadow={true} onClick={() => this.onClickParent(1)}>親カテゴリ</Button>{this.state.openParent === 1 ? renderChildren(1) : null}</li>
           </ul>
         </div>
       </div>
@@ -76,8 +75,13 @@ class Sideber extends Component {
 
   renderFavor() {
     return(
-      <div>
-        <div className="_title">人気</div>
+      <div className="_favor">
+        <div className="_title"><span>人気</span></div>
+        <div className="_article">
+          <img alt="" src="http://localhost:3000/articles/img/article.bmp" />
+          <a className="_article_title">タイトルタイトルタイトル</a>
+          <div className="_state">日付</div>
+        </div>
       </div>
     );
   }
@@ -85,7 +89,7 @@ class Sideber extends Component {
   renderRecent() {
     return(
       <div>
-        <div className="_title">最近</div>
+        <div className="_title"><span>最近</span></div>
       </div>
     );
   }
