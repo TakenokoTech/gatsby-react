@@ -98,7 +98,7 @@ class Article extends Component {
   }
 
   render() {
-    const className = this.props.className + " App-article";
+    const className = this.props.className + " z-depth-1" + " App-article";
 
     return (
       <div className={className}>{this.renderArticle()}</div>

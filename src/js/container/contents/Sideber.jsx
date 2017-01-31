@@ -37,7 +37,7 @@ class Sideber extends Component {
     return (
       <div className="_profile">
         <div className="_title"><span>Profile</span></div>
-        <img alt="" src={panda}/><div className="_name">たけのこ</div>
+        <div className="_profile_box"><img alt="" src={panda}/><div className="_name">たけのこ</div></div>
         <div className="_clear" />
         <div className="_link">
           <Button className="_social _g" addRipple={true} onClick={null}><i className="fi-social-github" /></Button>
@@ -74,16 +74,25 @@ class Sideber extends Component {
   }
 
   renderFavor() {
+    const renderArticle = () => {
+      let arr = [];
+      for(let i of [1,2,3,4,5])
+      arr.push(
+        <Button Tag="div" className="_article" key={i} addRipple={true} notShadow={true}>
+          <div className="_article_state">【カテゴリ】2017/02/01</div>
+          <div className="_article_title">タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</div>
+        </Button>, <hr/>
+      );
+      arr.pop();
+      return arr;
+    };
     return(
       <div className="_favor">
         <div className="_title"><span>人気</span></div>
-        <div className="_article">
-          <img alt="" src="http://localhost:3000/articles/img/article.bmp" />
-          <a className="_article_title">タイトルタイトルタイトル</a>
-          <div className="_state">日付</div>
-        </div>
+        {renderArticle()}
       </div>
     );
+    // <div className="favor_button"><Button className="_">prev</Button><Button className="_">next</Button></div>
   }
 
   renderRecent() {
@@ -103,7 +112,7 @@ class Sideber extends Component {
         <div className="_content">{this.renderProfile()}</div>
         <div className="_content">{this.renderCategory()}</div>
         <div className="_content">{this.renderFavor()}</div>
-        <div className="_content">{this.renderRecent()}</div>
+        <div className="_content">{/*this.renderRecent()*/}</div>
       </div>
     );
   }
