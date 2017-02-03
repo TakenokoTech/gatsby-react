@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {GaAds, Button} from '../compornents/index.jsx';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import panda from '../../../images/panda.png';
+import { Link } from 'react-router';
 
 class Sideber extends Component {
 
@@ -78,10 +79,12 @@ class Sideber extends Component {
       let arr = [];
       for(let i of [1,2,3,4,5])
       arr.push(
+        <Link to={"/" + i}>
         <Button Tag="div" className="_article" key={i} addRipple={true} notShadow={true}>
           <div className="_article_state">【カテゴリ】2017/02/01</div>
           <div className="_article_title">タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</div>
-        </Button>, <hr/>
+        </Button>
+        </Link>, <hr/>
       );
       arr.pop();
       return arr;

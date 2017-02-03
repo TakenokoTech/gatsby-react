@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import '../css/index.css';
-// import '../css/App.css';
 
 // import Component
 import Header from './container/Header.jsx';
@@ -24,6 +22,7 @@ class App extends Component {
   //==========================================================
   componentDidMount(){
     console.log("componentDidMount");
+    console.log(this.props.routeParams.key);
   }
 
   //==========================================================
@@ -37,11 +36,12 @@ class App extends Component {
   // RENDER
   //==========================================================
   render() {
+    const routeKay = this.props.routeParams.key;
     return (
       <div className="App">
         <div className="root">
           <Header/>
-          <Contents onLoad={this.onLoad}/>
+          <Contents onLoad={this.onLoad} routeKay={routeKay}/>
           <Footer/>
         </div>
         <Overlay overlay={this.state}/>

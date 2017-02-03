@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './js/App';
+import Root from './js/Root';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// REDIRECT
+if(location.pathname.split('/').length > 2) window.location.href = "http://" + location.hostname + ":3000";
+
+// RENDER
+ReactDOM.render(<Root />, document.getElementById('root'));

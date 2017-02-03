@@ -28,6 +28,12 @@ class Article extends Component {
     parser.getArticle("articles/16.01.15/article.2.xml").then((res) => this.setState(res));
   }
 
+  componentWillUpdate(nextProps, nextState) {
+    console.log("componentWillUpdate");
+    // if(this.props.routeKay !== nextProps.routeKay)
+      // parser.getArticle(nextProps.routeKay%2 === 1 ? "articles/16.01.15/article.1.xml" : "articles/16.01.15/article.2.xml").then((res) => this.setState(res));
+  }
+
   //==========================================================
   // RENDER
   //==========================================================
@@ -98,7 +104,9 @@ class Article extends Component {
   }
 
   render() {
-    const className = this.props.className + " z-depth-1" + " App-article";
+    const className = this.props.className
+      + " z-depth-1" 
+      + " App-article";
 
     return (
       <div className={className}>{this.renderArticle()}</div>

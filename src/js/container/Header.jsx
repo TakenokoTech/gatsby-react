@@ -3,6 +3,7 @@ import logo from '../../images/LOGO.svg';
 
 // import Component
 import {Button} from "./compornents/index.jsx"
+import { Link } from 'react-router';
 
 class Header extends Component {
 
@@ -33,10 +34,8 @@ class Header extends Component {
           <Button className="brand"><img src={logo} className="App-logo" alt="logo"/></Button>
         </div>
         <div className="navigation btn-group-justified">
-          <Button className={btnClass}>Home</Button>
-          <Button className={btnClass}>Products</Button>
-          <Button className={btnClass}>About</Button>
-          <Button className={btnClass} onClick={this.onToggleOverlayClass} >Support</Button>
+          <Link className={btnClass} to={"/"}>Home</Link>
+          <Link className="btn" to={"/about"}>About</Link>
         </div>
       </div>
     );
