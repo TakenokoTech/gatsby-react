@@ -1,16 +1,16 @@
-// import marked from 'marked';
-// import highlight from "highlight.js";
 import * as api from './api.jsx';
 import moment from 'moment';
 
-
-// Synchronous highlighting with highlight.js
-// marked.setOptions({highlight: (code) => highlight.highlightAuto(code).value});
-
+/**
+ * 日付表記の変換
+ */
 function date(date){
   return moment(date).format('YYYY-MM-DD');
 }
 
+/**
+ * 本文のタグを変換
+ */
 function parse(sentence) {
   const s = sentence;
   return s.children;
@@ -25,7 +25,7 @@ function parse(sentence) {
  *  | {string} sentence     - 本文
  */
 export const getArticle = (fileName) => {
-  return new Promise ((resolve, reject) => api.callApi(fileName)
+  return new Promise ((resolve, reject) => api.callApiGetXml(fileName)
     .then((res) => {
       const dom = new DOMParser().parseFromString(res.text, "text/xml");
       const resolveRes = {
@@ -39,4 +39,44 @@ export const getArticle = (fileName) => {
       resolve(resolveRes);
     })
   );
+}
+
+/**
+ * @returns {Array} - カテゴリ一覧
+ *  | {Object} - 親階層
+ *  |  | {Integer} count - 記事数
+ *  |  | {String} id - カテゴリ
+ *  |  | {String} name - カテゴリ名
+ *  |  | {Object} children - 子階層
+ */
+export const getCategory = () => {
+  return new Promise ((resolve, reject) => api.callApiGetJson("http://localhost:8000/category")
+    .then((res) => {
+      resolve(JSON.parse(res));
+    })
+  );
+}
+
+/**
+ * 親カテゴリの取得
+ */
+export const getParentsCategory = (category) => {
+  category = category || [];
+  let formattedCategory = [];
+  for(let c of category) {
+    if(c.parent_id === "") formattedCategory.push(c);
+  }
+  return formattedCategory;
+}
+
+/**
+ * 子カテゴリの取得
+ */
+export const getChildrenCategory = (category, ParentsCategoryId) => {
+  if(!ParentsCategoryId) return [];
+  let formattedCategory = [];
+  for(let c of category) {
+    if(c.parent_id === ParentsCategoryId) formattedCategory.push(c);
+  }
+  return formattedCategory;
 }

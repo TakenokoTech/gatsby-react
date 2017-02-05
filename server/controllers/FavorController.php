@@ -2,10 +2,9 @@
 
 require_once("BaseController.php");
 
-class InitController extends BaseController {
+class FavorController extends BaseController {
 
     public function index () {
-
         $json = array();
         $key = ["date", "title", "category", "description"];
         foreach ($this->model->index() as $row) {

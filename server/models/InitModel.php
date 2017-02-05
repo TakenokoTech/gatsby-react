@@ -21,11 +21,27 @@ class InitModel extends BaseModel{
   public function index() {
     //==================================================================
     // IMPORT PATH
+    $cat = $this->INI["CATEGORY_URL"];
     $dir = $this->INI["ARTICLES_URL"];
     $this->FILE->searchFile($dir);
     $path = $this->FILE->getFilePath();
     //==================================================================
-    // IMPORT XML
+    // IMPORT CATEGORY XML
+    $xmlData = @simplexml_load_file($cat);
+
+    foreach ($xmlData->category as $data) {
+      $id         = @$data->id;
+      $parent_id  = @$data->parent_id;
+      $name       = @$data->name;
+
+      $INSERT = "INSERT INTO category (id, parent_id, name)";
+      $VALUES = "VALUES ('$id', '$parent_id', '$name')";
+
+      $sql = $INSERT . " " . $VALUES . ";";
+      $result_flag = $this->DB->query($sql);
+    }
+    //==================================================================
+    // IMPORT ARTICLE XML
     foreach($path as &$p) {
         if (!preg_match("/\.xml$/i", $p)) continue;
         $xmlData = @simplexml_load_file($p);
@@ -45,7 +61,6 @@ class InitModel extends BaseModel{
     //==================================================================
     // CHECK RESULT
     $result = $this->DB->query("SELECT * FROM blog");
-
     $arr = array();
     while ($row = $result->fetchArray()) array_push($arr, $row);
     $this->DB->close();

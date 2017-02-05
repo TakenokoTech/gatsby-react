@@ -1,0 +1,17 @@
+<categorylist>
+    <category>
+        <id>1</id>
+        <parent_id></parent_id>
+        <name>カテゴリ1</name>
+    </category>
+    <category>
+        <id>2</id>
+        <parent_id>1</parent_id>
+        <name>カテゴリ2</name>
+    </category>
+    <category>
+        <id>3</id>
+        <parent_id>1</parent_id>
+        <name>カテゴリ3</name>
+    </category>
+</categorylist>

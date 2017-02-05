@@ -12,21 +12,31 @@ import superagent from 'superagent';
 //   });
 // }
 
-function apiGet(apiName){
+function apiGet(apiName, accept){
   return new Promise(
     (resolve, reject) => {
       superagent.get(apiName)
-        .set("Accept", "text/xml")
+        .set("Accept", accept)
         .end((err, res) => err ? reject(err) : resolve(res));
     }
   );
 }
 
-export const callApi = (apiName) => {
+export const callApiGetXml = (apiName) => {
   return new Promise(
-    (resolve, reject) => apiGet(apiName)
+    (resolve, reject) => apiGet(apiName, "text/xml")
       .then((response) => {
         resolve(response);
+      }
+    )
+  );
+}
+
+export const callApiGetJson = (apiName) => {
+  return new Promise(
+    (resolve, reject) => apiGet(apiName, "application/json")
+      .then((response) => {
+        resolve(response.text);
       }
     )
   );
