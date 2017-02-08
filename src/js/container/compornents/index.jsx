@@ -4,6 +4,7 @@ import Chips from "./Chips.jsx"
 import GaAds from "./GaAds.jsx"
 import Link from "./Link.jsx"
 import ParseDiv from "./ParseDiv.jsx"
+import Sns from "./Sns.jsx"
 
 export {
   Breadcrumb,
@@ -11,5 +12,6 @@ export {
   Chips,
   GaAds,
   Link,
-  ParseDiv
+  ParseDiv,
+  Sns
 };

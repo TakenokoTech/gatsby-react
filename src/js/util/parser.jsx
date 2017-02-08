@@ -80,3 +80,15 @@ export const getChildrenCategory = (category, ParentsCategoryId) => {
   }
   return formattedCategory;
 }
+
+/**
+ * @returns {Array} -   人気記事一覧
+ *  | {Object} 
+ */
+export const getFavorArticl = () => {
+  return new Promise ((resolve, reject) => api.callApiGetJson("http://localhost:8000/favor")
+    .then((res) => {
+      resolve(JSON.parse(res));
+    })
+  );
+}

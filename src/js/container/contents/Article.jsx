@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as parser from '../../util/parser';
-import {Breadcrumb, Button, ParseDiv, Chips, Link, GaAds} from '../compornents/index.jsx';
+import {Breadcrumb, Button, ParseDiv, Link, GaAds, Sns} from '../compornents/index.jsx';
 import {PrismCode} from "react-prism";
 import _ from 'lodash';
 
@@ -97,7 +97,7 @@ class Article extends Component {
           <div className="_sentence _description">{this.renderSentence(this.state.description)}</div>
           <GaAds/>
           <div className="_sentence">{this.renderSentence(this.state.sentence)}</div>
-          <Chips/>
+          <Sns/>
       </div>
     );
     return returnDom;
@@ -105,7 +105,7 @@ class Article extends Component {
 
   render() {
     const className = this.props.className
-      + " z-depth-1" 
+      + " z-depth-1"
       + " App-article";
 
     return (

@@ -1,0 +1,52 @@
+.sns_component {
+
+  width: 100%;
+  margin:auto;
+  list-style: none;
+  overflow-y:hidden;
+
+  ._sns_title {
+    width: 100%;
+    text-align: center;
+  }
+
+  .sns_button {
+
+    position:relative;
+    width: 20%;
+    height: 40px;
+    margin: 0;
+    background-color: #999;
+    float:left;
+    list-style: none;
+    text-align: center;
+
+    i {
+      width: 100%;
+      color: #FFF;
+      font-size: 28px;
+      line-height: 42px;
+    }
+
+    &.hatebu{
+      background-color: #38393C;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &.twitter{
+      background-color: #00acec;
+    }
+    &.facebook{
+      background-color: #265a96;
+    }
+    &.googleplus{
+      background-color: #dd4b39;
+    }
+    &.linkedin{
+      background-color:  #0077B5;
+    }
+  }
+
+}

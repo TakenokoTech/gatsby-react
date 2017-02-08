@@ -11,7 +11,9 @@ class Sideber extends Component {
     super(props);
     this.onClickParent = this.onClickParent.bind(this);
     this.state = {
-      openParent: null
+      openParent: null,
+      category: null,
+      favor: null
     };
   }
 
@@ -19,7 +21,12 @@ class Sideber extends Component {
   // LIFECYCLE
   //==========================================================
   componentDidMount(){
-    parser.getCategory().then((res) => this.setState({category: res}));
+    parser.getCategory().then((res) => {
+      this.setState({category: res})
+    });
+    parser.getFavorArticl().then((res) => {
+      this.setState({favor: res});
+    });
   }
 
   //==========================================================
@@ -101,16 +108,18 @@ class Sideber extends Component {
   }
 
   renderFavor() {
-    const renderArticle = () => {
+    const renderArticle = (t) => {
       let arr = [];
-      for(let i of [1,2,3,4,5])
+      const favor = t.state.favor || [];
+      let key = 1;
+      for(let f of favor)
       arr.push(
-        <Link to={"/" + i} key={i*2}>
-        <Button Tag="div" className="_article" key={i} addRipple={true} notShadow={true}>
-          <div className="_article_state">【カテゴリ】2017/02/01</div>
-          <div className="_article_title">タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</div>
+        <Link to={"/" + key} key={key}>
+        <Button Tag="div" className="_article" key={key++} addRipple={true} notShadow={true}>
+          <div className="_article_state">【{f.category}】{f.date}</div>
+          <div className="_article_title">{f.title}</div>
         </Button>
-        </Link>, <hr key={i*2+1}/>
+        </Link>, <hr key={key++}/>
       );
       arr.pop();
       return arr;
@@ -118,7 +127,7 @@ class Sideber extends Component {
     return(
       <div className="_favor">
         <div className="_title"><span>人気</span></div>
-        {renderArticle()}
+        {renderArticle(this)}
       </div>
     );
     // <div className="favor_button"><Button className="_">prev</Button><Button className="_">next</Button></div>
