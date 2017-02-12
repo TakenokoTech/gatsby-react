@@ -25,7 +25,7 @@ class Terms extends Component {
     let key = 0, returnDom = [];
     console.log(this.state);
     returnDom.push(
-      <div className="col-md-12" key={key}>
+      <div className="_article col-md-12" key={key}>
         <ParseDiv className="_sentence">{this.state.sentence}</ParseDiv>
       </div>
     );
@@ -34,7 +34,7 @@ class Terms extends Component {
 
   render() {
     const className = this.props.className
-      + " z-depth-1" 
+      + " z-depth-1 App-article"
       + " App-about";
 
     return (

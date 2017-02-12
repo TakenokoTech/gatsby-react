@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Button} from './compornents/index.jsx';
+import { Link } from 'react-router';
 
 class Header extends Component {
 
@@ -39,9 +40,7 @@ class Header extends Component {
   renderLegal() {
     return (
       <div className="legal">
-        <div><a>プライバシーポリシー</a></div>
-        <div><a>利用規約</a></div>
-        <div><a>特定商取引法に基づく表示</a></div>
+        <div><Link to={"terms"}>利用規約</Link></div>
       </div>
     );
   }

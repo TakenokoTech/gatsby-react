@@ -12,7 +12,9 @@ class Sns extends Component {
   }
 
   render() {
-    const liClass = "sns_button " + "z-depth-1 " + "waves-effect waves-light ";
+    const liClass = "sns_button "
+    + "z-depth-1 "
+    + "waves-effect waves-light ";
 
     return (
       <div className="sns_component">
