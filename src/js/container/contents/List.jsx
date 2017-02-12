@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as parser from '../../util/parser';
 import {Breadcrumb, ParseDiv, GaAds, Sns} from '../compornents/index.jsx';
 import {renderDom} from "./Utils.jsx"
+import { Link } from 'react-router';
 import _ from 'lodash';
 
 class List extends Component {
@@ -50,7 +51,7 @@ class List extends Component {
         <div className="list-item" key={key++}>
           <div className="waves-effect waves-light list-item-left"><img className="_img" alt="" src="http://localhost:3000/articles/img/article.bmp" /></div>
           <div className="list-item-right">
-            <a className='_title' href=''>{articles[i].title}</a>
+            <Link className='_title' to={"" + articles[i].article_id}>{articles[i].title}</Link>
             <div className='list-item-right-bottom'>{articles[i].description}</div>
           </div>
           <div className="list-item-date">

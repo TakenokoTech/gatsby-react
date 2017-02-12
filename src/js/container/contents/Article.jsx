@@ -30,8 +30,6 @@ class Article extends Component {
 
   componentWillUpdate(nextProps, nextState) {
     console.log("componentWillUpdate");
-    // if(this.props.routeKay !== nextProps.routeKay)
-      // parser.getArticle(nextProps.routeKay%2 === 1 ? "articles/16.01.15/article.1.xml" : "articles/16.01.15/article.2.xml").then((res) => this.setState(res));
   }
 
   //==========================================================

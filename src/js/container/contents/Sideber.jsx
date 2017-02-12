@@ -114,7 +114,7 @@ class Sideber extends Component {
       let key = 1;
       for(let f of favor)
       arr.push(
-        <Link to={"/" + key} key={key}>
+        <Link to={"" + f.article_id} key={key}>
         <Button Tag="div" className="_article" key={key++} addRipple={true} notShadow={true}>
           <div className="_article_state">【{f.category}】{f.date}</div>
           <div className="_article_title">{f.title}</div>

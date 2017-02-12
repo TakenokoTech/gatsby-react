@@ -40,7 +40,8 @@ class Header extends Component {
   renderLegal() {
     return (
       <div className="legal">
-        <div><Link to={"terms"}>利用規約</Link></div>
+        <div><Link to={"terms"}>利用規約</Link></div><br />
+        <div>TAKETEC inc.</div>
       </div>
     );
   }
@@ -48,7 +49,7 @@ class Header extends Component {
   render() {
     return (
       <div className="z-depth-4 App-footer">
-        {this.renderFooter()}
+        {/*this.renderFooter()*/}
         {this.renderLegal()}
       </div>
     );

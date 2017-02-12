@@ -5,7 +5,7 @@ class SQL extends SQLite3 {
   private $table = [
     'DELETE FROM blog',
     'DELETE FROM category',
-    'CREATE TABLE blog (date TIMESTAMP, title TEXT, category TEXT, description TEXT, sentence TEXT)',
+    'CREATE TABLE blog (article_id INT, date TIMESTAMP, title TEXT, category TEXT, description TEXT, sentence TEXT)',
     'CREATE TABLE category (id INT, parent_id INT, name TEXT)'
   ];
 

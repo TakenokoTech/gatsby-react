@@ -7,7 +7,7 @@ class ArticleController extends BaseController {
     public function index () {
 
         $json = array();
-        $key = ["date", "title", "category", "description"];
+        $key = ["article_id", "date", "title", "category", "description"];
         foreach ($this->model->index() as $row) {
             $arr = array();
             foreach ($key as $k) $arr[$k] = $row[$k];
