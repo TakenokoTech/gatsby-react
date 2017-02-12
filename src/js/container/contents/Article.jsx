@@ -14,9 +14,9 @@ class Article extends Component {
 
     //-- article data --//
     this.state = {
-      date: "20XX/01/12 08:00",
-      title: "タイトル",
-      sentence: "文章"
+      date: "",
+      title: "",
+      sentence: ""
     };
   }
 
@@ -105,7 +105,7 @@ class Article extends Component {
 
   render() {
     const className = this.props.className
-      + " z-depth-1"
+      + (this.state.title !== "" ? " z-depth-1" : "")
       + " App-article";
 
     return (

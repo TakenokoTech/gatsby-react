@@ -68,9 +68,9 @@ class Sideber extends Component {
         if(!childrenCategory.hasOwnProperty(i)) break;
         childrenCategoryLi.push(
           <li key={i}>
-            <Button className="_child" notShadow={true} addRipple={true}>
+            <Link className="_child" to={"list-" + childrenCategory[i].id}>
               {childrenCategory[i].name}  ({childrenCategory[i].count})
-            </Button>
+            </Link>
           </li>
         );
       }

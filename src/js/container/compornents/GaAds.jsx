@@ -18,7 +18,7 @@ class GaAds extends Component {
     props['data-ad-format'] = "auto";
 
     // return(<ins {...props}/>);
-    return(<div style={{height: "50px", backgroundColor: "#e08b8b"}}/>);
+    return(<div style={{height: "50px", backgroundColor: "#DDD"}}/>);
   }
 }
 

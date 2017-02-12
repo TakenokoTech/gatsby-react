@@ -91,11 +91,25 @@ export const getChildrenCategory = (category, ParentsCategoryId) => {
 }
 
 /**
- * @returns {Array} -   人気記事一覧
+ * @returns {Array} - 人気記事一覧
  *  | {Object} 
  */
 export const getFavorArticl = () => {
   return new Promise ((resolve, reject) => api.callApiGetJson("http://localhost:8000/favor")
+    .then((res) => {
+      resolve(JSON.parse(res));
+    })
+  );
+}
+
+/**
+ * @returns {Array} - 記事一覧
+ *  | {Object} 
+ */
+export const getArticlList = (param) => {
+  const query = param ? ("/" + param) : "";
+  console.log(query);
+  return new Promise ((resolve, reject) => api.callApiGetJson("http://localhost:8000/article" + query)
     .then((res) => {
       resolve(JSON.parse(res));
     })
