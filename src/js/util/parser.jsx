@@ -16,6 +16,15 @@ function parse(sentence) {
   return s.children;
 }
 
+export const getNormarlXml = (fileName)=> {
+  return new Promise ((resolve, reject) => api.callApiGetXml(fileName)
+    .then((res) => {
+      const dom = new DOMParser().parseFromString(res.text, "text/xml");
+      resolve(parse(dom.getElementsByTagName("root")[0])[0].innerHTML);
+    })
+  );
+}
+
 /**
  * @return {Object} - 記事の要素
  *  | {string} date         - 時刻

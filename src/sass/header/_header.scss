@@ -17,6 +17,9 @@
     .btn {
       background-color: $header_backgound;
       color: $header_color;
+      &.disabled {
+        background-color: $header_backgound !important;
+      }
     }
   }
 }

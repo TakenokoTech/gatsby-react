@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Advertise from './contents/Advertise.jsx';
 import Article from './contents/Article.jsx';
 import Sideber from './contents/Sideber.jsx';
+import Terms from './contents/Terms.jsx'
 // import About from './contents/About.jsx';
 
 class Contents extends Component {
@@ -27,6 +28,7 @@ class Contents extends Component {
   renderContent() {
     switch(this.props.routeKay) {
       // case "about": return <About className="col-sm-9"/>;
+      case "terms": return <Terms className="col-sm-9"/>;
       default: return <Article className="col-sm-9" routeKay={this.props.routeKay}/>;
     }
   }
