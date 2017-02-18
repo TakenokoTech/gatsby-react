@@ -59,7 +59,7 @@ export const getArticle = (fileName) => {
  *  |  | {Object} children - 子階層
  */
 export const getCategory = () => {
-  return new Promise ((resolve, reject) => api.callApiGetJson("/server/category")
+  return new Promise ((resolve, reject) => api.callApiGetJson("/server.php/category")
     .then((res) => {
       resolve(JSON.parse(res));
     })
@@ -95,7 +95,7 @@ export const getChildrenCategory = (category, ParentsCategoryId) => {
  *  | {Object} 
  */
 export const getFavorArticl = () => {
-  return new Promise ((resolve, reject) => api.callApiGetJson("/server/favor")
+  return new Promise ((resolve, reject) => api.callApiGetJson("/server.php/favor")
     .then((res) => {
       resolve(JSON.parse(res));
     })
@@ -109,7 +109,7 @@ export const getFavorArticl = () => {
 export const getArticlList = (param) => {
   const query = param ? ("/" + param) : "";
   console.log(query);
-  return new Promise ((resolve, reject) => api.callApiGetJson("/server/article" + query)
+  return new Promise ((resolve, reject) => api.callApiGetJson("/server.php/article" + query)
     .then((res) => {
       resolve(JSON.parse(res));
     })
