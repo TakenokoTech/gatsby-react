@@ -30,6 +30,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "server": "php -S localhost:8000 -t ./server"
+    "server": "php -S localhost:8000 -t ./build"
   }
 }
