@@ -1,4 +1,4 @@
-<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="../server/style.css" rel="stylesheet" type="text/css">
 <?php
 
 require_once("BaseController.php");
@@ -10,7 +10,7 @@ class ListController extends BaseController {
         echo '<h1>記事一覧</h1>';
         foreach ($this->model->index() as $row) {
             echo '<div class="list-item">';
-            echo '<div class="list-item-left"><img class="_img" src="http://localhost:3000/articles/img/article.bmp" /></div>';
+            echo '<div class="list-item-left"><img class="_img" src="../articles/img/article.bmp" /></div>';
             echo '<div class="list-item-right">';
                 echo "<a class='_title' href=''>{$row["title"]}</a>";
                 echo '<div class="list-item-right-middle">';

@@ -1,8 +1,13 @@
 <?php
 header('Access-Control-Allow-Origin: *');
+
+require_once("./server/compornents/SQL.php");
+require_once("./server/compornents/FILE.php");
+require_once("./server/compornents/XML.php");
+
 //
 if (empty($_SERVER['PATH_INFO'])) {
-  include('./controllers/index.php');
+  include('./server/controllers/index.php');
   exit;
 }
 
@@ -18,8 +23,8 @@ $modelName = ucfirst ($className) . "Model";
 
 //===============================================================
 // INCLUDE MODEL & CONTROLLER
-file_exists('./models/'.$modelName.'.php') ? include('./models/'.$modelName.'.php') : require_once('./error.php');
-file_exists('./controllers/'.$controllerName.'.php') ? include('./controllers/'.$controllerName.'.php') : require_once('./error.php');
+file_exists('./server/models/'.$modelName.'.php') ? include('./server/models/'.$modelName.'.php') : require_once('./server/error.php');
+file_exists('./server/controllers/'.$controllerName.'.php') ? include('./server/controllers/'.$controllerName.'.php') : require_once('./server/error.php');
 
 $class = new $controllerName();
 $ret = $class->index($analysis);
