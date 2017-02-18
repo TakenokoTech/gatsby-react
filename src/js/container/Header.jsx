@@ -10,9 +10,7 @@ class Header extends Component {
   //==========================================================
   // LIFECYCLE
   //==========================================================
-  componentDidMount(){
-    console.log("componentDidMount");
-  }
+  componentDidMount(){}
 
   //==========================================================
   // ACTION

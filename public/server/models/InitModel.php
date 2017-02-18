@@ -47,15 +47,17 @@ class InitModel extends BaseModel{
         if (!preg_match("/\.xml$/i", $p)) continue;
         $xmlData = @simplexml_load_file($p);
 
-        $article_id  = @$article_id + 1;
-        $date        = @$xmlData->date;
+        if(@$xmlData->title == "") continue;
         $title       = @$xmlData->title;
+        $article_id  = @$article_id + 1;
+        $file_path   = $p;
+        $date        = @$xmlData->date;
         $category    = @$xmlData->category;
         $description = @$xmlData->description;
         $sentence    = @$xmlData->sentence->asXML();
 
-        $INSERT = "INSERT INTO blog (article_id, date, title, category, description, sentence)";
-        $VALUES = "VALUES ('$article_id', '$date', '$title', '$category', '$description', '')";
+        $INSERT = "INSERT INTO blog (article_id, file_path, date, title, category, description, sentence)";
+        $VALUES = "VALUES ('$article_id', '$file_path', '$date', '$title', '$category', '$description', '')";
 
         $sql = $INSERT . " " . $VALUES . ";";
         $result_flag = $this->DB->query($sql);

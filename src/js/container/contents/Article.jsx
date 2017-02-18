@@ -12,6 +12,7 @@ class Article extends Component {
   constructor(props){
     super(props);
 
+    this.loadArticleList = this.loadArticleList.bind(this);
     //-- article data --//
     this.state = {
       date: "",
@@ -23,13 +24,18 @@ class Article extends Component {
   //==========================================================
   // LIFECYCLE
   //==========================================================
-  componentDidMount(){
-    console.log("componentDidMount");
-    parser.getArticle("articles/16.01.15/article.2.xml").then((res) => this.setState(res));
-  }
+  componentDidMount(){}
 
-  componentWillUpdate(nextProps, nextState) {
-    console.log("componentWillUpdate");
+  componentWillUpdate(nextProps, nextState) {}
+
+  loadArticleList() {
+    parser.getArticlList(this.props.id)
+    .then((res) => {
+      this.setState({id: this.props.id, file_path: res[0].file_path});
+      parser.getArticle(res[0].file_path).then((res) => {
+      this.setState(res);
+    });
+    });
   }
 
   //==========================================================
@@ -102,6 +108,7 @@ class Article extends Component {
   }
 
   render() {
+    if(this.state.id !== this.props.id) this.loadArticleList();
     const className = this.props.className
       + (this.state.title !== "" ? " z-depth-1" : "")
       + " App-article";

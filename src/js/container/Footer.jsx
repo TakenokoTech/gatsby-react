@@ -4,9 +4,7 @@ import { Link } from 'react-router';
 
 class Header extends Component {
 
-  componentDidMount(){
-    console.log("componentDidMount");
-  }
+  componentDidMount(){}
 
   onToggleOverlayClass(){
     console.log("onToggleOverlayClass");

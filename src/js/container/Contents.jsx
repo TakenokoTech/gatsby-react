@@ -20,7 +20,6 @@ class Contents extends Component {
   // LIFECYCLE
   //==========================================================
   componentDidMount(){
-    console.log("componentDidMount");
     setTimeout(() => this.props.onLoad() ,1000);
   }
 
@@ -42,7 +41,7 @@ class Contents extends Component {
       // case "about": return <About className="col-sm-9"/>;
       case "list": return <List className="col-sm-9" id={key[1]} />;
       case "terms": return <Terms className="col-sm-9"/>;
-      default: return <Article className="col-sm-9" routeKay={this.props.routeKay}/>;
+      default: return <Article className="col-sm-9"  id={key[0]} routeKay={this.props.routeKay}/>;
     }
   }
 

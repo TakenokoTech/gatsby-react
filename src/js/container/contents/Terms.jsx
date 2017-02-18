@@ -14,8 +14,7 @@ class Terms extends Component {
   // LIFECYCLE
   //==========================================================
   componentDidMount(){
-    console.log("componentDidMount");
-    parser.getNormarlXml("terms.xml").then((res) => this.setState({sentence: res}));
+    parser.getNormarlXml("articles/terms.xml").then((res) => this.setState({sentence: res}));
   }
 
   //==========================================================
@@ -23,7 +22,6 @@ class Terms extends Component {
   //==========================================================
   renderTerms() {
     let key = 0, returnDom = [];
-    console.log(this.state);
     returnDom.push(
       <div className="_article col-md-12" key={key}>
         <ParseDiv className="_sentence">{this.state.sentence}</ParseDiv>

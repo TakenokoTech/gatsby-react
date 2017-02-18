@@ -3,9 +3,7 @@ import BaseComponent from "./BaseComponent.jsx";
 
 class Button extends BaseComponent {
 
-  componentDidMount(){
-    console.log("componentDidMount");
-  }
+  componentDidMount(){}
 
   render() {
     let className = this.props.className || (this.props.noRipple ? "btn" : "btn waves-effect");

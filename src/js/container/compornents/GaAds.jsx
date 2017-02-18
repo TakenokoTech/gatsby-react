@@ -6,7 +6,6 @@ class GaAds extends Component {
 
   componentDidMount(){
     // (adsbygoogle = window.adsbygoogle || []).push({});
-    console.log("componentDidMount", adsbygoogle);
   }
 
   render() {

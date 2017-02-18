@@ -4,9 +4,9 @@
 require_once("BaseModel.php");
 
 /*
- * 検索
+ * カテゴリ検索
  */
-class ArticleModel extends BaseModel{
+class CatlistModel extends BaseModel{
 
   public $INI, $DB, $FILE;
 
@@ -25,7 +25,7 @@ class ArticleModel extends BaseModel{
 
   public function index() {
     $query = "SELECT * FROM blog JOIN category WHERE blog.category = category.name";
-    if($this->id !== null) $query .= " AND blog.article_id = " .$this->id;
+    if($this->id !== null) $query .= " AND category.id = " .$this->id;
     $result = $this->DB->query($query);
     $arr = array();
     while ($row = $result->fetchArray()) array_push($arr, $row);

@@ -24,16 +24,12 @@ class List extends Component {
   //==========================================================
   // LIFECYCLE
   //==========================================================
-  componentDidMount(){
-    console.log("componentDidMount");
-  }
+  componentDidMount(){}
 
-  componentWillUpdate(nextProps, nextState) {
-    console.log("componentWillUpdate");
-  }
+  componentWillUpdate(nextProps, nextState) {}
 
   loadArticleList() {
-    parser.getArticlList(this.props.id).then((res) => this.setState({id: this.props.id, articles: res}));
+    parser.getCategoryList(this.props.id).then((res) => this.setState({id: this.props.id, articles: res}));
   }
 
   //==========================================================
@@ -46,10 +42,9 @@ class List extends Component {
     let returnRender = [];
     for(let i in articles) {
       if(!articles.hasOwnProperty(i)) break;
-      console.log(articles[i]);
       returnRender.push(
         <div className="list-item" key={key++}>
-          <div className="waves-effect waves-light list-item-left"><img className="_img" alt="" src="http://localhost:3000/articles/img/article.bmp" /></div>
+          <div className="waves-effect waves-light list-item-left"><img className="_img" alt="" src="articles/img/article.bmp" /></div>
           <div className="list-item-right">
             <Link className='_title' to={"" + articles[i].article_id}>{articles[i].title}</Link>
             <div className='list-item-right-bottom'>{articles[i].description}</div>
