@@ -1,11 +1,11 @@
 import React, {Component, PropTypes} from "react";
-// import setting from "../../setting.jsx";
 let adsbygoogle = null;
 
 class GaAds extends Component {
 
   componentDidMount(){
-    // (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    //console.log(this.adsbygoogle);
   }
 
   render() {
@@ -16,8 +16,8 @@ class GaAds extends Component {
     props['data-ad-slot'] = "2251991893";
     props['data-ad-format'] = "auto";
 
-    // return(<ins {...props}/>);
-    return(<div style={{height: "50px", backgroundColor: "#DDD"}}/>);
+    return(<ins {...props}/>);
+    //return(<div style={{height: "50px", backgroundColor: "#DDD"}}/>);
   }
 }
 
