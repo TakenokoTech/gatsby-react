@@ -3,9 +3,17 @@ let adsbygoogle = null;
 
 class GaAds extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   componentDidMount(){
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    //console.log(this.adsbygoogle);
+    setTimeout(() => {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      this.setState({});
+    }, 500);
+    console.log(!!adsbygoogle);
   }
 
   render() {
