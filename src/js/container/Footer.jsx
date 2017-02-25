@@ -39,7 +39,7 @@ class Header extends Component {
     return (
       <div className="legal">
         <div><Link to={"terms"}>利用規約</Link></div><br />
-        <div>TAKETEC inc.</div>
+        <div>NokoTech inc.</div>
       </div>
     );
   }

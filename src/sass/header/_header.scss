@@ -4,10 +4,11 @@
 .App-header {
   background-color: $header_backgound;
   .header {
-    padding: $p2;
+    padding: $p1;
     text-align: center;
+    pointer-events: none;
     img {
-      height: $p2;
+      height: $p3;
       margin: 0 auto;
     }
   }

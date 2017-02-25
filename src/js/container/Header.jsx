@@ -28,8 +28,8 @@ class Header extends Component {
 
     return (
       <div className="z-depth-4 App-header">
-        <div className="header btn-group-justified">
-          <Button className="brand"><img src={logo} className="App-logo" alt="logo"/></Button>
+        <div className="header waves-effect btn-group-justified">
+          <a className="brand"><img src={logo} className="App-logo" alt="logo"/></a>
         </div>
         <div className="navigation btn-group-justified">
           <Link className={btnClass} to={"/"}>Home</Link>
