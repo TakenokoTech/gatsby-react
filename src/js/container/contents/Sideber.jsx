@@ -10,6 +10,7 @@ class Sideber extends Component {
   constructor(props){
     super(props);
     this.onClickParent = this.onClickParent.bind(this);
+    // this.scrollTop = this.scrollTop.bind(this);
     this.state = {
       openParent: null,
       category: null,
@@ -37,6 +38,10 @@ class Sideber extends Component {
     this.setState(
       this.state.openParent !== i ? {openParent: i} : {openParent: null}
     );
+  }
+
+  scrollTop() {
+    window.scrollTo(0,0);
   }
 
   //==========================================================
@@ -68,8 +73,8 @@ class Sideber extends Component {
         if(!childrenCategory.hasOwnProperty(i)) break;
         childrenCategoryLi.push(
           <li key={i}>
-            <Link className="_child" to={"list-" + childrenCategory[i].id}>
-              {childrenCategory[i].name}  ({childrenCategory[i].count})
+            <Link className="_child" to={"list-" + childrenCategory[i].id} onClick={() => this.scrollTop()}>
+              {childrenCategory[i].name} ({childrenCategory[i].count})
             </Link>
           </li>
         );
@@ -115,7 +120,7 @@ class Sideber extends Component {
       for(let f of favor)
       arr.push(
         <Link to={"" + f.article_id} key={key}>
-        <Button Tag="div" className="_article" key={key++} addRipple={true} notShadow={true}>
+        <Button Tag="div" className="_article" key={key++} addRipple={true} notShadow={true} onClick={() => this.scrollTop()}>
           <div className="_article_state">【{f.category}】{f.date}</div>
           <div className="_article_title">{f.title}</div>
         </Button>
@@ -146,9 +151,9 @@ class Sideber extends Component {
 
     return (
       <div className={className}>
-        <div className=""><GaAds/></div>
         <div className="_content">{this.renderProfile()}</div>
         <div className="_content">{this.renderCategory()}</div>
+        <div className=""><GaAds/></div>
         <div className="_content">{this.renderFavor()}</div>
         <div className="_content">{/*this.renderRecent()*/}</div>
       </div>

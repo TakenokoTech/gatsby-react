@@ -12,7 +12,7 @@ class Img extends Component {
 
   render() {
     let props = {};
-    props['src'] = this.props.attr.src && this.props.attr.src.value || null;
+    props['src'] = (this.props.attr.src && this.props.attr.src.value) || null;
     if(!props['src']) return null;
 
     props['className'] = this.props.className || null;
@@ -20,7 +20,7 @@ class Img extends Component {
 
     return (
       <div className='_img'>
-        <img {...props} />
+        <img alt="" {...props} />
       </div>
     );
   }

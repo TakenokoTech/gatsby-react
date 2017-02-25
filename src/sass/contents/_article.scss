@@ -52,10 +52,13 @@
 //========================================================
 .App-article {
   overflow: hidden;
+  opacity: 0.0;
+  animation: article_fadeIn 1.0s ease-in-out 0.8s 1 normal;
+  animation-fill-mode: forwards;
   ._article{
-    opacity: 0.0;
-    animation: article_fadeIn 1.0s ease-in-out 0.8s 1 normal;
-    animation-fill-mode: forwards;
+    // opacity: 0.0;
+    // animation: article_fadeIn 1.0s ease-in-out 0.8s 1 normal;
+    // animation-fill-mode: forwards;
   }
   &.enter {
     opacity: 1.0;

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from '../../images/LOGO.svg';
 
 // import Component
-import {Button} from "./compornents/index.jsx"
 import { Link } from 'react-router';
 
 class Header extends Component {

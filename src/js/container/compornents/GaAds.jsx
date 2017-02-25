@@ -10,10 +10,10 @@ class GaAds extends Component {
 
   componentDidMount(){
     setTimeout(() => {
-      (adsbygoogle = window.adsbygoogle || []).push({});
+      (adsbygoogle = window.adsbygoogle || []).push({}); // no-unused-vars
       this.setState({});
     }, 500);
-    // console.log(!!adsbygoogle);
+    if(adsbygoogle) return;
   }
 
   render() {
