@@ -46,7 +46,6 @@ class Contents extends Component {
   }
 
   render() {
-    console.log("Contents : " + this.props.routeKay);
     return (
       <div className="row App-contents">
           {this.renderContent()}

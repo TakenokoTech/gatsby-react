@@ -13,7 +13,7 @@ class GaAds extends Component {
       (adsbygoogle = window.adsbygoogle || []).push({});
       this.setState({});
     }, 500);
-    console.log(!!adsbygoogle);
+    // console.log(!!adsbygoogle);
   }
 
   render() {

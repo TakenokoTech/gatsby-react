@@ -21,7 +21,7 @@ class App extends Component {
   // LIFECYCLE
   //==========================================================
   componentDidMount(){
-    console.log(this.props.routeParams.key);
+    // console.log(this.props.routeParams.key);
   }
 
   //==========================================================

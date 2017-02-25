@@ -15,6 +15,7 @@ class Article extends Component {
     this.loadArticleList = this.loadArticleList.bind(this);
     //-- article data --//
     this.state = {
+      id: -1,
       date: "",
       title: "",
       sentence: ""
@@ -29,7 +30,9 @@ class Article extends Component {
   componentWillUpdate(nextProps, nextState) {}
 
   loadArticleList() {
-    parser.getArticlList(this.props.id)
+    const getId = this.props.id || 0;
+    // console.log(getId)
+    parser.getArticlList(getId)
     .then((res) => {
       this.setState({id: this.props.id, file_path: res[0].file_path});
       parser.getArticle(res[0].file_path).then((res) => {

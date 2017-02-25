@@ -9,7 +9,7 @@ class Root extends Component {
   // LIFECYCLE
   //==========================================================
   componentDidMount(){
-    console.log("componentDidMount");
+    // console.log("componentDidMount");
   }
 
   //==========================================================
