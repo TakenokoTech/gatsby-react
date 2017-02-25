@@ -151,9 +151,9 @@ class Sideber extends Component {
 
     return (
       <div className={className}>
+        <div className=""><GaAds/></div>
         <div className="_content">{this.renderProfile()}</div>
         <div className="_content">{this.renderCategory()}</div>
-        <div className=""><GaAds/></div>
         <div className="_content">{this.renderFavor()}</div>
         <div className="_content">{/*this.renderRecent()*/}</div>
       </div>
