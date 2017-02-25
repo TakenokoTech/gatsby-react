@@ -22,9 +22,9 @@ class Sns extends Component {
     + "z-depth-1 "
     + "waves-effect waves-light ";
 
-    const url = "http://www.google.com"//window.location.href;
-    const title = "タイトル";
-    const category = "カテゴリ";
+    const url = window.location.href;
+    const title = this.props.title || "";
+    const category = this.props.category || "";
     // const hatebuHref = "http://b.hatena.ne.jp/entry/{" + url + "}";
     const twitterHref = "https://twitter.com/intent/tweet?text=" + title + "&url=" + url +"&hashtags=" + category;
     const facebookHref = "http://www.facebook.com/share.php?u=" + url;
@@ -49,5 +49,7 @@ class Sns extends Component {
 Sns.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,
+  title: PropTypes.string,
+  category: PropTypes.string
 };
 export default Sns;

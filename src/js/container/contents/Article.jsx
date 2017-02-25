@@ -102,7 +102,7 @@ class Article extends Component {
           <div className="_sentence _description">{this.renderSentence(this.state.description)}</div>
           <GaAds/>
           <div className="_sentence">{this.renderSentence(this.state.sentence)}</div>
-          <Sns/>
+          <Sns title={this.state.title} category={this.state.category} />
       </div>
     );
     return returnDom;
