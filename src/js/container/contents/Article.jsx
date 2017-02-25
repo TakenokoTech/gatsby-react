@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as parser from '../../util/parser';
-import {Breadcrumb, Button, ParseDiv, Link, GaAds, Sns} from '../compornents/index.jsx';
+import {Breadcrumb, Button, ParseDiv, Link, GaAds, Sns, Img} from '../compornents/index.jsx';
 import {PrismCode} from "react-prism";
 import _ from 'lodash';
 
@@ -78,6 +78,7 @@ class Article extends Component {
         case "code": returnRender.push(<pre key={i} className="line-numbers"><PrismCode className="language-javascript">{sentence[i].innerHTML}</PrismCode></pre>); break;
         case "button": returnRender.push(<Button key={i}>{sentence[i].innerHTML}</Button>); break;
         case "link": returnRender.push(<Link key={i} attr={sentence[i].attributes}>{this.renderSentence(sentence[i].childNodes)}</Link>); break;
+        case "img": returnRender.push(<Img key={i} attr={sentence[i].attributes} />); break;
         default:
           const tag = _.find([ "", "span", "a", "p", "h1", "h2", "h3", "h4"], t => t === sentence[i].nodeName);
           if(tag) {

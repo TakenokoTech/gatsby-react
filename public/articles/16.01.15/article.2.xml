@@ -27,7 +27,7 @@
   <h3>ヘッダー3</h3>
   <p>本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文</p>
   <link href="./">サイト</link>
-
+  <img class="small" src="articles/img/article.bmp"></img>
   <h4>ヘッダー4</h4>
   <p>本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文</p>
   <button>ボタン</button>
@@ -38,6 +38,8 @@
   return 0;
 }
 </code>
+
+<img src="articles/img/article.bmp"></img>
 
 <!-- テキスト -->
 <text>

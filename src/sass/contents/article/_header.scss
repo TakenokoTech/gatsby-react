@@ -77,4 +77,13 @@
     width: 100%;
     padding: $normal 0;
   }
+  ._img {
+    margin: $p3 0;
+    img {
+      width: 80%;
+    }
+    &.small {
+      width: 300px;
+    }
+  }
 }
