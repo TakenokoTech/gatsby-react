@@ -1,19 +1,17 @@
 import React, {Component, PropTypes} from "react";
+import { Link } from 'react-router';
 
 class Breadcrumb extends Component {
 
   constructor(props){
     super(props);
-    this.state = {
-      link: ["親カテゴリ", "カテゴリ", "子カテゴリ"]
-    };
   }
 
   renderChild(){
     let key = 0;
     let links = [];
-    for(let l of this.state.link) {
-      links.push(<a key={key++}>{l}</a>);
+    for(let l of this.props.links) {
+      links.push(<Link to={l.path} key={key++} >{l.name}</Link>);
       links.push(<span key={key++}>{" > "}</span>);
     }
     links.pop();

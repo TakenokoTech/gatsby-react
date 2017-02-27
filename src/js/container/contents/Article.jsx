@@ -18,7 +18,8 @@ class Article extends Component {
       id: -1,
       date: "",
       title: "",
-      sentence: ""
+      sentence: "",
+      links: []
     };
   }
 
@@ -36,9 +37,10 @@ class Article extends Component {
     parser.getArticlList(getId)
     .then((res) => {
       this.setState({id: this.props.id, file_path: res[0].file_path});
+      parser.getCategory().then((res) => {/* this.setState({links: res.links});*/});
       parser.getArticle(res[0].file_path).then((res) => {
-      this.setState(res);
-    });
+        this.setState(res);
+      });
     });
   }
 
@@ -100,7 +102,7 @@ class Article extends Component {
     let key = 0, returnDom = [];
     returnDom.push(
       <div className="_article col-md-12" key={key}>
-          <Breadcrumb className=""/>
+          {/*<Breadcrumb className="" links={[{name: "a", path: "a"},{name: "b", path:"b"}]} />*/}
           <ParseDiv className="_title">{this.state.title}</ParseDiv>
           <div className="_entry">{this.renderEntry()}</div>
           <div className="_sentence _description">{this.renderSentence(this.state.description)}</div>
