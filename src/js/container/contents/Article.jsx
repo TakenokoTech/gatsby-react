@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as parser from '../../util/parser';
-import {Breadcrumb, Button, ParseDiv, Link, GaAds, Sns, Img} from '../compornents/index.jsx';
-import {PrismCode} from "react-prism";
+import {Breadcrumb, Button, Code, ParseDiv, Link, GaAds, Sns, Img} from '../compornents/index.jsx';
+
 import _ from 'lodash';
 
 class Article extends Component {
@@ -30,8 +30,9 @@ class Article extends Component {
   componentWillUpdate(nextProps, nextState) {}
 
   loadArticleList() {
+    // parser.getArticle("articles/16.01.15/article.2.xml").then((res) => this.setState(res));
     const getId = this.props.id || 0;
-    // console.log(getId)
+    console.log(getId)
     parser.getArticlList(getId)
     .then((res) => {
       this.setState({id: this.props.id, file_path: res[0].file_path});
@@ -78,7 +79,7 @@ class Article extends Component {
     for(let i in sentence) {
       if(!sentence.hasOwnProperty(i)) break;
       switch (sentence[i].nodeName) {
-        case "code": returnRender.push(<pre key={i} className="line-numbers"><PrismCode className="language-javascript">{sentence[i].innerHTML}</PrismCode></pre>); break;
+        case "code": returnRender.push(<Code key={i}>{sentence[i].innerHTML}</Code>); break;
         case "button": returnRender.push(<Button key={i}>{sentence[i].innerHTML}</Button>); break;
         case "link": returnRender.push(<Link key={i} attr={sentence[i].attributes}>{this.renderSentence(sentence[i].childNodes)}</Link>); break;
         case "img": returnRender.push(<Img key={i} attr={sentence[i].attributes} />); break;

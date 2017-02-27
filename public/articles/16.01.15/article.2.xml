@@ -35,7 +35,7 @@
 
 <!-- コード -->
 <code class="language-css">function a() {
-  return 0;
+  return <![CDATA[|<aaa>aaaa</aaaaaa>|]]>;
 }
 </code>
 

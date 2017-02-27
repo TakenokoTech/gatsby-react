@@ -42,7 +42,7 @@ class InitModel extends BaseModel{
     }
     //==================================================================
     // IMPORT ARTICLE XML
-    $article_id = 0;
+    $article_id = -1;
     foreach($path as &$p) {
         if (!preg_match("/\.xml$/i", $p)) continue;
         $xmlData = @simplexml_load_file($p);

@@ -10,6 +10,10 @@ class Header extends Component {
     console.log("onToggleOverlayClass");
   }
 
+  scrollTop() {
+    window.scrollTo(0,0);
+  }
+
   renderFooter() {
     const footerContents = [
       {category: "カテゴリ1", page: ["page1", "page2"]},
@@ -38,8 +42,8 @@ class Header extends Component {
   renderLegal() {
     return (
       <div className="legal">
-        <div><Link to={"terms"}>利用規約</Link></div><br />
-        <div>NokoTech inc.</div>
+        <div　onClick={() => this.scrollTop()}><Link to={"terms"}>利用規約</Link></div><br />
+        <div>NokoωTech inc.</div>
       </div>
     );
   }
