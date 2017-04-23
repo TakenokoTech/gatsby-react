@@ -1,0 +1,87 @@
+.dropmenu-group {
+  margin-top: $p1;
+}
+
+.dropmenu{
+  padding: 0;
+
+  &:before, &:after{
+    content: "";
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+  li{
+    position: relative;
+    width: 100%;
+    float: left;
+    text-align: center;
+    a{
+      display: block;
+      margin: 0px;
+      padding: 16px 0 13px;
+      color:#666;
+      background-color: #F6F6F6;
+      font-size: 14px;
+      line-height: 1;
+      text-decoration: none;
+      border: 1px solid #CCC;
+    }
+    ul{
+      li{
+        width: 100%;
+        a{
+          padding: 13px 15px;
+          // border-top: 1px solid #7c8c0e;
+          color:#888;
+          background: #FFF;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+.dropmenu {
+  .slidein li{
+    animation-name: slideIn;
+  }
+  .slideout li{
+    animation-name: slideOut;
+  }
+  li ul {
+    perspective: 400px;
+    li {
+      animation-duration: .1s;
+      animation-fill-mode: both;
+      @for $i from 0 through 20 {
+        &:nth-child(#{$i + 1}) {
+          animation-delay: #{.1 * $i}s;
+        }
+      }
+    }
+  }
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-90deg);
+    transform-origin: 50% 0;
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: rotateX(-90deg);
+    transform-origin: 50% 0;
+  }
+}

@@ -1,0 +1,107 @@
+.App-list {
+  max-width: $content_max_width;
+  padding: $p3 0;
+  #article_list_related {
+    text-align: center;
+    font-size: $p2;
+  }
+  ._article {
+    margin: $p2 $m1;
+    .waves-effect {
+      width: 100%;
+      background-color: #F3F3F3;
+      border-radius: 8px;
+      // padding-bottom: $p2;
+    }
+    ._image {
+      width: 100%;
+      height: 194px;
+      object-fit: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    ._text {
+      padding: $p1 $m1;
+    }
+    ._title {
+      font-size: $p2;
+    }
+    ._date {
+      text-align: right;
+    }
+    ._summary {
+      padding-top: $normal;
+      p {
+        margin: 0;
+        text-indent: $normal;
+        line-height: $p1;
+      }
+    }
+  }
+}
+
+//========================================================
+// スクロールアニメーション
+//========================================================
+.App-list {
+  ._article{
+    //animation: article_list_fadeIn 1.0s ease-in-out 1.0s 1 normal;
+    //animation-fill-mode: forwards;
+    //opacity: 0.0;
+
+    &.invisible {
+      transition: all 0.2s ease;
+      opacity: 0.6;
+      transform: translate3d( 0, 10px, 0);
+    }
+
+    &.visible {
+      transition: all 1.0s ease;
+      opacity: 1.0;
+      transform: translate3d( 0, 0, 0);
+    }
+    &.invisible { visibility: visible; }
+  }
+
+  @for $cnt from 1 through 10{
+    ._article:nth-child(#{$cnt}) {
+      //animation-delay: ($cnt*0.2)+s;
+      transition-delay: ($cnt*0.2)+s;
+    }
+  }
+}
+
+@keyframes article_list_fadeIn {
+    0%    {
+      opacity: 0.0;
+      transform: translate3d( 0, 60px, 0);
+    }
+    100%  {
+      opacity: 1.0;
+      transform: translate3d( 0, 0, 0);
+    }
+}
+
+//========================================================
+// スマホ用
+//========================================================
+/*
+@media screen and (max-width: 600px) {
+#article_list {
+  margin: 0;
+  .article_list_article {
+    margin: 0;
+    padding: 0;
+  }
+  article {
+    margin: $p2 0;
+    padding: 0;
+    box-shadow: 0px 0px 0px;
+    .waves-effect {
+      border-radius: 0px;
+    }
+  }
+}
+}
+*/

@@ -1,0 +1,61 @@
+.App-list ._article {
+  .list-item {
+    position: relative;
+    padding: 20px 10px;
+    margin: 10px;
+    border-bottom: 1px solid #DDD;
+    .list-item-left {
+      position: relative;
+      width: 240px;
+      height: 180px;
+      border-radius: 0px;
+      float: left;
+      img {
+        width: 240px;
+        height: 180px;
+        // overflow: hidden;
+      }
+    }
+    .list-item-right {
+      position: relative;
+      margin-left: 260px;
+       ._title {
+        color: #434343;
+        font-size: $p1;
+        font-weight: bold;
+        line-height: $p2;
+        margin-bottom: 12px;
+        letter-spacing: 0.1rem;
+      }
+      .list-item-right-bottom {
+        margin-top: 12px;
+        font-size: $normal;
+      }
+    }
+    .list-item-date {
+      position: absolute;
+      right: 0px;
+      bottom: 20px;
+      padding: 10px 0;
+      font-size: $m1;
+      ._date {
+        // background-color: #65ace4;
+        // color: #FFF;
+        padding: 3px 10px;
+        margin-right: 5px;
+        // border-radius: 10px;
+      }
+      ._category {
+        // background-color: #d06d8c;
+        // color: #FFF;
+        // padding: 3px 10px;
+        // margin-right: 5px;
+        // border-radius: 10px;
+      }
+    }
+  }
+  .sns_button {
+    width: 20%;
+    border-radius: 0px;
+  }
+}

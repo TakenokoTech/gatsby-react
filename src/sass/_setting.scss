@@ -1,0 +1,41 @@
+//===============================================
+// COLOR SET
+//===============================================
+$base_background: #FCFCFC;
+
+$header_backgound: #222;
+$header_color: #EEE;
+
+$footer_backgound: #444;
+$footer_color: #ccc;
+
+$article_background: #FFFFFF;
+$article_color: #333;
+
+//===============================================
+// FONT SET
+//===============================================
+* {
+  font-family:
+    'Open Sans', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3',
+    'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'Lucida Sans Unicode',
+    Arial, Verdana, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+//===============================================
+// LENGTH SET
+//===============================================
+$gold:    1.61;
+$normal:  1.0rem;
+$m1: $normal / $gold;
+$m2: $m1 / $gold;
+$m3: $m2 / $gold;
+$p1: $normal * $gold;
+$p2: $p1 * $gold;
+$p3: $p2 * $gold;
+$p4: $p3 * $gold;
+$p5: $p4 * $gold;
+
+$content_max_width: 980px;
+$article_max_width: 720px;

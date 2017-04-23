@@ -1,0 +1,105 @@
+@import './article/header.scss';
+
+.App-article {
+  padding: 0px;
+  margin-bottom: 0;
+  ._article {
+    padding: $p1;
+    margin: $p2 0;
+    color: $article_color;
+    background-color: $article_background;
+    letter-spacing: .065em;
+    ._entry {
+      background-color: $article_background;
+      padding: $m2 0;
+      margin-top: $p1;
+      font-size: $normal / 1.2;
+      ._date {
+        margin-right: $m1;
+        padding: $m2 $normal;
+        color: #FFF;
+        background-color: #565656;
+        border-radius: $m2;
+      }
+      ._category {
+        position: relative;
+        padding: $m2 $normal;
+        color: #FFF;
+        background-color: #039be5;
+        border-radius: $normal;
+      }
+    }
+    ._title {
+      padding-top: $p2;
+      font-size: $p2;
+      font-weight: bold;
+    }
+    ._description {
+      margin: $p3 0;
+    }
+    ._chips {
+      .chip {color: #ffffff;}
+      ._t {background-color:#00aced;}
+      ._f {background-color:#305097;}
+    }
+    ._sentence {
+      margin-bottom: $p3;
+    }
+  }
+}
+//========================================================
+// スクロールアニメーション
+//========================================================
+.App-article {
+  overflow: hidden;
+  opacity: 0.0;
+  animation: article_fadeIn 1.0s ease-in-out 0.8s 1 normal;
+  animation-fill-mode: forwards;
+  ._article{
+    // opacity: 0.0;
+    // animation: article_fadeIn 1.0s ease-in-out 0.8s 1 normal;
+    // animation-fill-mode: forwards;
+  }
+  &.enter {
+    opacity: 1.0;
+    max-height: 4000px;
+    transition: all 1.0s ease;
+  }
+  &.leave {
+    opacity: 0.0;
+    max-height: 0;
+    transition: all 1.0s ease;
+  }
+}
+
+@keyframes article_fadeIn {
+    0%    {
+      opacity: 0.0;
+      // transform: translate3d( 0, 60px, 0);
+    }
+    100%  {
+      opacity: 1.0;
+      // transform: translate3d( 0, 0, 0);
+    }
+}
+@keyframes article_fadeOut {
+    0%    {
+      opacity: 1.0;
+      // transform: translate3d( 0, 60px, 0);
+    }
+    100%  {
+      opacity: 0.0;
+      // transform: translate3d( 0, 0, 0);
+    }
+}
+
+//========================================================
+// スマホ用
+//========================================================
+@media screen and (max-width: $article_max_width) {
+.App-article {
+  ._article {
+    margin: 0;
+  }
+}
+}
