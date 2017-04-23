@@ -32,6 +32,7 @@ class Header extends Component {
         </div>
         <div className="navigation btn-group-justified">
           <Link className={btnClass} to={"/"}>Home</Link>
+          <Link className="btn disabled" to={"/about"}>Product</Link>
           <Link className="btn disabled" to={"/about"}>About</Link>
         </div>
       </div>
