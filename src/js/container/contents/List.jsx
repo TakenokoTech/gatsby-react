@@ -64,7 +64,6 @@ class List extends Component {
     let key = 0, returnDom = [];
     returnDom.push(
       <div className="_article col-md-12" key={key}>
-          <Breadcrumb className=""/>
           <ParseDiv className="_title">{this.state.title}</ParseDiv>
           <GaAds/>
           {this.renderDescription()}
