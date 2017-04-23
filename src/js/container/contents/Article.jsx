@@ -102,7 +102,6 @@ class Article extends Component {
     let key = 0, returnDom = [];
     returnDom.push(
       <div className="_article col-md-12" key={key}>
-          {/*<Breadcrumb className="" links={[{name: "a", path: "a"},{name: "b", path:"b"}]} />*/}
           <ParseDiv className="_title">{this.state.title}</ParseDiv>
           <div className="_entry">{this.renderEntry()}</div>
           <div className="_sentence _description">{this.renderSentence(this.state.description)}</div>
