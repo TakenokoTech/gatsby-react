@@ -16,8 +16,8 @@ class Product extends Component {
   componentDidMount(){}
 
   loadArticleList() {
-    const getId = this.props.id || 0;
-    parser.getNormarlXml("articles/product/" + getId + ".xml").then((res) => this.setState({sentence: res}));
+    this.state.id = this.props.id || 0;
+    parser.getNormarlXml("articles/product/" + this.state.id + ".xml").then((res) => this.setState({sentence: res}));
   }
 
   //==========================================================

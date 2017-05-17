@@ -44,7 +44,7 @@ class Contents extends Component {
       case "terms": return <Terms className="col-sm-9"/>;
       //case "product": return <Product className="col-sm-9" id={key[0]} routeKay={this.props.routeKay}/>;
     }
-    if ( key[0].indexOf('product') != -1) {
+    if ( key[0] != null && key[0].indexOf('product') != -1) {
       return <Product className="col-sm-9" id={key[1]}/>;
     }
     return <Article className="col-sm-9"  id={key[0]} routeKay={this.props.routeKay}/>;
