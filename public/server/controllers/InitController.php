@@ -7,7 +7,7 @@ class InitController extends BaseController {
     public function index () {
 
         $json = array();
-        $key = ["file_path", "date", "title", "category", "description"];
+        $key = ["article_id", "file_path", "date", "title", "category", "description"];
         foreach ($this->model->index() as $row) {
             $arr = array();
             foreach ($key as $k) $arr[$k] = $row[$k];

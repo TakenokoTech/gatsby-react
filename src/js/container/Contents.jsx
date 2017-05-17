@@ -5,6 +5,7 @@ import Article from './contents/Article.jsx';
 import Sideber from './contents/Sideber.jsx';
 import Terms from './contents/Terms.jsx';
 import List from './contents/List.jsx';
+import Product from './contents/Product.jsx';
 // import About from './contents/About.jsx';
 
 class Contents extends Component {
@@ -41,8 +42,12 @@ class Contents extends Component {
       // case "about": return <About className="col-sm-9"/>;
       case "list": return <List className="col-sm-9" id={key[1]} />;
       case "terms": return <Terms className="col-sm-9"/>;
-      default: return <Article className="col-sm-9"  id={key[0]} routeKay={this.props.routeKay}/>;
+      //case "product": return <Product className="col-sm-9" id={key[0]} routeKay={this.props.routeKay}/>;
     }
+    if ( key[0].indexOf('product') != -1) {
+      return <Product className="col-sm-9" id={key[1]}/>;
+    }
+    return <Article className="col-sm-9"  id={key[0]} routeKay={this.props.routeKay}/>;
   }
 
   render() {

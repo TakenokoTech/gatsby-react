@@ -12,7 +12,7 @@ class ListController extends BaseController {
             echo '<div class="list-item">';
             echo '<div class="list-item-left"><img class="_img" src="../articles/img/article.bmp" /></div>';
             echo '<div class="list-item-right">';
-                echo "<a class='_title' href=''>{$row["title"]}</a>";
+                echo "<a class='_title' href=''>".$row["article_id"].$row["title"]."</a>";
                 echo '<div class="list-item-right-middle">';
                     echo "<span class='_date'>".$row["date"]."</span>";
                     echo "<span class='_category'>".$row["category"]."</span>";

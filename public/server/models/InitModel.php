@@ -49,7 +49,7 @@ class InitModel extends BaseModel{
 
         if(@$xmlData->title == "") continue;
         $title       = @$xmlData->title;
-        $article_id  = @$article_id + 1;
+        $article_id  = @$xmlData->id;
         $file_path   = $p;
         $date        = @$xmlData->date;
         $category    = @$xmlData->category;
